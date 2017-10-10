@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 //var sample = require('./routes/sample');
-
+var customer = require('./routes/customers');
 
 
 // añadir conexión a mongoose
@@ -28,7 +28,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //// Nuevas Rutas van aqui:
-//app.use('/sample', sample);
+app.use('/api', customer);
+//require('./test/customer_crud_tests.js');
+
 
 //Front End
 app.all("*", (req, res) => {
@@ -56,24 +58,22 @@ app.use(function(err, req, res, next) {
 module.exports = app;
 
 
+//PRUEBA
 
-// PRUEBA
-
-Customer = require('./models/customer.js');
-
+/*const Customer = require('./models/customer');
 const customer = new Customer({
-	dni : {type : String, required : true},
-	fistName : {type : String, required : true},
-	lastName : {type : String, required : true},
-	phone : {type : String, required : true},
-	email : {type : String},
-	note : {type : String}
-});
-
+	"dni": "324243",
+	"firstName": "Miki",
+	"lastName": "Lopez",
+	"phone": "54654",
+	"email": "asdfdsaf@gmail.com",
+	"note": "gfgdfgd dgasdg",
+}); 
 customer.save((err) => {
-            if (err) {
-                console.log(err);
-            } else {
-                console.log(customer);
-            }
-        })
+       if (err) {
+           console.log(err);
+       } else {
+           console.log(customer);
+       }
+   })*/
+
