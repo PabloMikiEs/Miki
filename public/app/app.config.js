@@ -11,7 +11,7 @@ angular.module('petStore')
             	template: "<customers-module></customers-module>" 
             })
             .when("/customers",{
-                 template: "<customers-module></customers-module>" 
+                 template:  "Customers"
             })
             .otherwise({
                 template: "Other111"
