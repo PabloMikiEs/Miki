@@ -1,0 +1,184 @@
+body {
+	background-color: #009688;
+	box-sizing: border-box;
+	background-image: url("https://vignette1.wikia.nocookie.net/dragonballfanon/images/b/b5/Gatito.png/revision/latest?cb=20131110180234&path-prefix=es");
+	background-repeat: no-repeat;
+	background-size: 250px 305px; 
+    background-position: bottom right; 
+    background-attachment: fixed;
+    font-family: 'Raleway', sans-serif;
+	}
+
+h1 {color: white;
+	text-align:center;
+	font-size:36px;
+}
+h1 a{color: white;
+	text-align:center;
+	font-size:36px;
+}
+.citaList{
+	font-size:24px;
+}
+
+.titulo{
+	font-family: 'Molle', cursive;
+	font-size: 3.5em;
+}
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column ;
+    width: 70%; 
+    margin:0 auto;
+    
+}
+.ficha {
+	padding:20px; 
+	background-color: lightgrey;
+	margin-bottom:20px; 
+    border-radius: 10px;
+}
+.ficha1 {
+	padding:40px; 
+	background-color: lightgrey;
+	border-radius: 10px;
+}
+.contenido {
+	display: flex;
+	flex-wrap: wrap;
+	padding-left:20px;
+}
+.botonera{
+	display: flex;
+	justify-content: flex-end;
+}
+
+.cabecera{
+	display: flex;
+    flex-wrap: wrap;
+}
+.encabezado1{
+	 display: flex;
+    align-items: flex-start;
+}
+.encabezado2{
+	display: flex;
+    justify-content: flex-end;
+     align-self: center;
+}
+.head-1 {
+    flex-grow: 1;
+}
+
+.head-2 {
+    flex-grow: 1;
+}
+
+
+.foto img{
+	max-width: 250px;
+	width: 100%;
+    height: auto; 
+}
+
+.info{
+	padding-left:30px;
+
+}
+
+
+.mas-info{
+    justify-content: center;
+    
+}
+
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+}
+
+
+.boton{
+    background-color: white;
+    border: 2px solid #009688;
+    border-radius:5px;
+    color: #009688;
+    padding: 12px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    overflow:auto;
+    font-size: 16px;
+    margin:10px;
+}
+
+.boton:hover {
+	 background: transparent;
+	 color: #2d2c2c;
+	 box-shadow: inset 0 0 0 2px #009688;
+}
+.boton:hover a{ 
+	 color: #fff; 
+}
+.boton a {
+	 text-decoration: none;
+	 color: #af2545;
+}
+#boton{ 
+	color:#000;
+	border: none; 
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    overflow:auto;
+    font-size: 16px;
+}
+#boton2{ 
+	color:#000;
+	border: none; 
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    overflow:auto;
+    font-size: 16px;
+}
+.boton3 {
+    background-color: white;
+    border: 2px solid #009688;
+    border-radius:5px;
+    color: #009688;
+    padding: 12px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    overflow:auto;
+    font-size: 16px;
+    margin:10px;
+}
+
+
+.tabla{
+	display:none;
+}
+.tabla1{
+	display:visible;
+}
+.centrar{
+	display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+.espacio{
+	padding-left:10px;
+	padding-right: 20px;
+}
+
+.fa{ 
+	padding-right: 10px;
+}
+

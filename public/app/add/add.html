@@ -1,0 +1,34 @@
+<section class="flex-container">
+	<article class="ficha1">
+			<div class="tabla1">
+				<div class="contenido"> 
+				  
+					<div class="flex-item">
+						<div class="info">
+							<form action="/action_page.php">
+  First name:<br>
+  <input type="text" name="firstname" value="Mickey">
+  <br>
+  Last name:<br>
+  <input type="text" name="lastname" value="Mouse">
+  <br><br>
+  <input type="submit" value="Submit">
+</form> 
+					    	<h3><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Cliente: {{client._id}}</h3>
+							<h3><i class="fa fa-clock-o" aria-hidden="true"></i>Nombre: {{client.firstName}} {{client.lastName}}</h3>
+							<h3><i class="fa fa-clock-o" aria-hidden="true"></i>DNI: {{client.dni}}</h3>
+ 							<h3><i class="fa fa-arrows-h" aria-hidden="true"></i>Telefono: {{client.phone}}</h3>
+					    	<h3><i class="fa fa-asterisk" aria-hidden="true"></i></i> email: {{client.email}}</h3>
+				    	</div>
+					</div>   
+				</div>
+				<div class="footer">
+				  <div class="mas-info"> 
+			    		<h2><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Mas info</h2>
+			    		<p>Nota: {{client.note}}</p>
+				    	</div>  
+				</div>
+			</div>
+		</article>
+		<div class="centrar"><button class="boton"><a href="/"><i class="fa fa-reply" aria-hidden="true"></i> Volver a citas</a></button></div>
+</section>

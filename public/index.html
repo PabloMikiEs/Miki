@@ -4,7 +4,7 @@
 	<base href="/">
 	<meta charset="UTF-8">
 	<title>PetStore Demo with AngularJs+Express+NodeJs+MongoDb</title>
-	<link rel="stylesheet" href="/stylesheets/style.css">
+	<link rel="stylesheet" href="/stylesheets/myStyle.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
@@ -21,14 +21,16 @@
 	
 	<script src="/app/customers/customers.module.js"></script>
 	<script src="/app/customers/customers.component.js"></script>
+	<script src="/app/customer/customer.module.js"></script>
+	<script src="/app/customer/customer.component.js"></script> 
+	<script src="/app/add/add.component.js"></script>
 
 	</head>
 	<body> 
-
-	<div>
-		<h1 class="titulo">Veterinaria Doogie</h1>
-		<div ng-view></div>
-	</div>
+ 
+	  <h1 class="titulo">Veterinaria Doogie</h1>
+	  <div data-ng-view></div> 
+ 
 
 </body>
 </html>

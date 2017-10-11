@@ -13,6 +13,14 @@ router.get('/customers',(req, res)=> {
 	res.json(Customer);
    });
 });
+
+router.get('/customer/:id',(req, res)=> {
+	Customer.findById({_id:req.params.id}, (err, Customer)=> {
+		res.json(Customer);
+	});
+});
+
+
 module.exports = router;
 
 

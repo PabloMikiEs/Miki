@@ -10,10 +10,15 @@ angular.module('petStore')
             .when("/",{
             	template: "<customers-module></customers-module>" 
             })
-            .when("/customers",{
-                 template:  "Customers"
-            })
+            .when('/customer/:id', {
+            	template: "<customer-module></customer-module>" 
+		    })
+		     .when('/add', {
+            	template: "<add-module></add-module>" 
+		    })
             .otherwise({
                 template: "Other111"
             });
     });
+
+

@@ -6,7 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 //var sample = require('./routes/sample');
-var customer = require('./routes/customers');
+//var customer2 = require('./routes/customers');
 
 
 // añadir conexión a mongoose
@@ -28,7 +28,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //// Nuevas Rutas van aqui:
-app.use('/api', customer);
+app.use('/api', require('./routes/customers')); //todo lo que empiece por api está delegado en customer
 //require('./test/customer_crud_tests.js');
 
 
@@ -45,19 +45,19 @@ module.exports = app;
 //PRUEBA
 
 /*const Customer = require('./models/customer');
-const customer = new Customer({
-	"dni": "324243",
-	"firstName": "Miki",
-	"lastName": "Lopez",
-	"phone": "54654",
-	"email": "asdfdsaf@gmail.com",
-	"note": "gfgdfgd dgasdg",
+const customer1 = new Customer({
+	"dni": "4236326",
+	"firstName": "Rosalia",
+	"lastName": "Suarez",
+	"phone": "656879876",
+	"email": "rosalia@gmail.com",
+	"note": "Loren ipsum ",
 }); 
-customer.save((err) => {
+customer1.save((err) => {
        if (err) {
            console.log(err);
        } else {
            console.log(customer);
        }
-   })*/
-
+   })
+*/
