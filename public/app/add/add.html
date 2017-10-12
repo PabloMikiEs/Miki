@@ -5,29 +5,22 @@
 				  
 					<div class="flex-item">
 						<div class="info">
-							<form action="/action_page.php">
-  First name:<br>
-  <input type="text" name="firstname" value="Mickey">
-  <br>
-  Last name:<br>
-  <input type="text" name="lastname" value="Mouse">
-  <br><br>
-  <input type="submit" value="Submit">
-</form> 
-					    	<h3><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Cliente: {{client._id}}</h3>
-							<h3><i class="fa fa-clock-o" aria-hidden="true"></i>Nombre: {{client.firstName}} {{client.lastName}}</h3>
-							<h3><i class="fa fa-clock-o" aria-hidden="true"></i>DNI: {{client.dni}}</h3>
- 							<h3><i class="fa fa-arrows-h" aria-hidden="true"></i>Telefono: {{client.phone}}</h3>
-					    	<h3><i class="fa fa-asterisk" aria-hidden="true"></i></i> email: {{client.email}}</h3>
+						 <form action="/add", method="post">
+					    	<h3><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Nombre: <input type="text" name="firstName" value=""></h3>
+							<h3><i class="fa fa-clock-o" aria-hidden="true"></i>Apellidos: <input type="text" name="lastName" value=""></h3>
+							<h3><i class="fa fa-clock-o" aria-hidden="true"></i>DNI: <input type="text" name="dni" value=""></h3>
+ 							<h3><i class="fa fa-arrows-h" aria-hidden="true"></i>Telefono: <input type="text" name="phone" value=""></h3>
+					    	<h3><i class="fa fa-asterisk" aria-hidden="true"></i></i> email: <input type="text" name="mail" value=""></h3>
 				    	</div>
 					</div>   
 				</div>
 				<div class="footer">
 				  <div class="mas-info"> 
 			    		<h2><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Mas info</h2>
-			    		<p>Nota: {{client.note}}</p>
+			    		<p>Nota: <input type="textarea" name="note" value=""></h3></p>
 				    	</div>  
 				</div>
+				<input type="submit" value="Submit"></form>
 			</div>
 		</article>
 		<div class="centrar"><button class="boton"><a href="/"><i class="fa fa-reply" aria-hidden="true"></i> Volver a citas</a></button></div>

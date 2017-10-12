@@ -45,15 +45,15 @@ module.exports = app;
 //PRUEBA
 
 /*const Customer = require('./models/customer');
-const customer1 = new Customer({
-	"dni": "4236326",
-	"firstName": "Rosalia",
-	"lastName": "Suarez",
-	"phone": "656879876",
-	"email": "rosalia@gmail.com",
-	"note": "Loren ipsum ",
+const customer = new Customer({
+	"dni": "32841697",
+	"firstName": "Miki",
+	"lastName": "Lopez",
+	"phone": "657329812",
+	"email": "miki@gmail.com",
+	"note": "Etiam ac leo leo. Sed ut nibh a lacus efficitur hendrerit at eget leo. Vestibulum blandit vel neque eu luctus. Duis at finibus felis. Suspendisse sed elit hendrerit purus dictum efficitur rutrum a dui. Duis sit amet nisi tincidunt elit molestie molestie sit amet at nunc. Morbi non elit placerat, eleifend neque ac, ultrices mi.",
 }); 
-customer1.save((err) => {
+customer.save((err) => {
        if (err) {
            console.log(err);
        } else {
