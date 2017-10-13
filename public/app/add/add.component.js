@@ -3,11 +3,10 @@
 angular.module('addModule', [])
     .component('addModule', {
         templateUrl:'/app/add/add.html',
-        controller: function($scope,$http,$routeParams) {
-            $http.get('/API/customer/' + $routeParams.id).then(function(response) {
+        controller: function($scope,$http) {
+            $http.get('/api/add').then(function(response) {
             	$scope.client = response.data;
             }); 
-            
         	console.log("ana")
         }
 

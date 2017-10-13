@@ -31,9 +31,9 @@ router.post('/add', (req, res) => {
 	   
 	   /*console.log(JSON.stringify(customer));*/
 	   
-	   });
+});
 	
-	})
+
 module.exports = router;
 
 
