@@ -10,7 +10,7 @@ angular.module('petStore')
             .when("/",{
             	template: "<customers-module></customers-module>" 
             })
-            .when('/customer/:id', {
+            .when('/customers/:id', {
             	template: "<customer-module></customer-module>" 
 		    })
 		     .when('/add', {
