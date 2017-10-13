@@ -13,8 +13,8 @@ angular.module('petStore')
             .when('/customers/:id', {
             	template: "<customer-module></customer-module>" 
 		    })
-		     .when('/add', {
-            	template: "<add-module></add-module>" 
+		    .when('/customers/add', {
+            	template: "<customer-module></customer-module>" 
 		    })
             .otherwise({
                 template: "Other111"

@@ -1,25 +1,25 @@
-<section class="flex-container">
-	<article class="ficha1">
-			<div class="tabla1">
-				<div class="contenido"> 
-				  
-					<div class="flex-item">
-						<div class="info">
-					    	<h3><i class="fa fa-dot-circle-o" aria-hidden="true"></i> Cliente: {{client._id}}</h3>
-							<h3><i class="fa fa-clock-o" aria-hidden="true"></i>Nombre: {{client.firstName}} {{client.lastName}}</h3>
-							<h3><i class="fa fa-clock-o" aria-hidden="true"></i>DNI: {{client.dni}}</h3>
- 							<h3><i class="fa fa-arrows-h" aria-hidden="true"></i>Telefono: {{client.phone}}</h3>
-					    	<h3><i class="fa fa-asterisk" aria-hidden="true"></i></i> email: {{client.email}}</h3>
-				    	</div>
-					</div>   
-				</div>
-				<div class="footer">
-				  <div class="mas-info"> 
-			    		<h2><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Mas info</h2>
-			    		<p>Nota: {{client.note}}</p>
-				    	</div>  
-				</div>
-			</div>
+<section class="flex-container" ng-controller="CustomerController"> 
+	<article class="ficha">
+			<div class="cabecera"> 
+	<h2>Customer {{customer._id}}</h2>
+	<form action="">
+		<input type="hidden" name="dni" ng-model="customer._id" />
+		<input type="hidden" name="dni" ng-model="customer.__v" />
+		dni: <input type="text" name="dni" ng-model="customer.dni" placeholder="dni" /><br />
+		firstName: <input type="text" name="firstName" ng-model="customer.firstName" placeholder="firstName" /><br />
+		lastName: <input type="text" name="lastName" ng-model="customer.lastName" placeholder="lastName" /><br />
+		phone: <input type="text" name="phone" ng-model="customer.phone" placeholder="phone" /><br />
+		email: <input type="text" name="email" ng-model="customer.email" placeholder="email" /><br />
+		note: <input type="text" name="note" ng-model="customer.note" placeholder="note" /><br />
+
+		<!--  <input type="button" ng-click="remove()" value="Delete"/>-->
+		<input type="button" ng-click="save()" ng-show="{{customer._id}}" value="Save"/>
+		<input type="button" ng-click="submit()" ng-show="{{!customer._id}}" value="Update"/>
+		<input type="button" ng-click="cancel()" value="Cancel"/>
+	</form>
+</div>
 		</article>
-		<div class="centrar"><button class="boton"><a href="/"><i class="fa fa-reply" aria-hidden="true"></i> Volver a citas</a></button></div>
+    </div> 
+    <div class="centrar"><button class="boton"><a href="/"><i class="fa fa-cloud-upload" aria-hidden="true"></i>Volver</a></button></div>
+    
 </section>

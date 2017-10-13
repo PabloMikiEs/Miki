@@ -29,8 +29,8 @@ router.post('/customers', (req, res) => {
 	   customer.mail = req.body.mail;
 	   customer.note = req.body.note;
 	   
-	   console.log("DNI", req.body.dni)
-	   console.log("Customer", customer);
+	   /*console.log("DNI", req.body.dni)
+	   console.log("Customer", customer);*/
 	   
 	   customer.save((err) => {
 			if (err) {
@@ -39,8 +39,7 @@ router.post('/customers', (req, res) => {
 			} else {
 				res.json(customer);
 			}
-		}) ;
-	   
+		}) ;   
 });
 	
 
