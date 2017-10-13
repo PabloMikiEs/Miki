@@ -29,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //// Nuevas Rutas van aqui:
 app.use('/api', require('./routes/customers')); //todo lo que empiece por api está delegado en customer
+app.use('/api', require('./routes/pets'));
 //require('./test/customer_crud_tests.js');
 
 
@@ -61,3 +62,25 @@ customer.save((err) => {
        }
    })
 */
+
+/*const Pets = require('./models/pet');
+const pet  = new Pets({
+	"name": "Sasha",
+	"birthdate":"2014-02-01",
+	"chipNumber": "Lopez",
+	"specie": "657329812",
+	"race": "miki@gmail.com",
+	"description": "Etiam ac leo leo. Sed ut nibh a lacus efficitur hendrerit at eget leo. Vestibulum blandit vel neque eu luctus. Duis at finibus felis. Suspendisse sed elit hendrerit purus dictum efficitur rutrum a dui. Duis sit amet nisi tincidunt elit molestie molestie sit amet at nunc. Morbi non elit placerat, eleifend neque ac, ultrices mi.",
+	"photoUrl": "Etiam ac leo leo. Sed ut nibh a lacus efficitur hendrerit at eget leo. Vestibulum blandit vel neque eu luctus. Duis at finibus felis. Suspendisse sed elit hendrerit purus dictum efficitur rutrum a dui. Duis sit amet nisi tincidunt elit molestie molestie sit amet at nunc. Morbi non elit placerat, eleifend neque ac, ultrices mi.",
+	"ownerId": "59dc7a8069107018902e79c7"
+}); 
+pet.save((err) => {
+       if (err) {
+           console.log(err);
+       } else {
+           console.log(pet);
+       }
+   })*/
+
+
+

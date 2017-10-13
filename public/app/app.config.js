@@ -13,9 +13,9 @@ angular.module('petStore')
             .when('/customers/:id', {
             	template: "<customer-module></customer-module>" 
 		    })
-		    .when('/customers/add', {
-            	template: "<customer-module></customer-module>" 
-		    })
+		    .when("/pets",{
+                template: "edadf"
+            })
             .otherwise({
                 template: "Other111"
             });

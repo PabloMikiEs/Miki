@@ -13,13 +13,18 @@
 		note: <input type="text" name="note" ng-model="customer.note" placeholder="note" /><br />
 
 		<!--  <input type="button" ng-click="remove()" value="Delete"/>-->
-		<input type="button" ng-click="save()" ng-show="{{customer._id}}" value="Save"/>
-		<input type="button" ng-click="submit()" ng-show="{{!customer._id}}" value="Update"/>
+		<input type="button" ng-click="submit()" ng-show="!customer._id" value="Save"/>
+		<input type="button" ng-click="edit()" ng-show="customer._id" value="Update"/>
 		<input type="button" ng-click="cancel()" value="Cancel"/>
 	</form>
-</div>
+	</div>
+
+    <div data-ng-repeat="pet in customerPets">
+		<div>{{pet}}</div>
+	</div>
+	<div>Fin</div>
 		</article>
     </div> 
     <div class="centrar"><button class="boton"><a href="/"><i class="fa fa-cloud-upload" aria-hidden="true"></i>Volver</a></button></div>
-    
+
 </section>

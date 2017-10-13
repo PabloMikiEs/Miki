@@ -1,0 +1,20 @@
+fgsdfg<section class="flex-container">
+	<div data-ng-repeat="x in pets">
+		<article class="ficha">
+			<div class="cabecera">
+				<div class="head-1">
+			  		<div class="encabezado1">
+	    				<p id="nombre1" class="name1 citaList"><i class="fa fa-user" aria-hidden="true"></i> Mascota : <strong>{{x.firstName}}</strong></p>
+	    			</div>
+	    		</div> 
+				<div class="head-2">
+			  		<div class="encabezado2">
+	    				<a href="/pets/{{x._id}}"><button class="boton"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Ver cliente</button> </a>
+	    			</div>
+	    		</div>
+			</div>
+		</article>
+    </div> 
+    <div class="centrar"><button class="boton"><a href="pets/add/"><i class="fa fa-cloud-upload" aria-hidden="true"></i>Añadir clientes</a></button></div>
+    
+</section>
