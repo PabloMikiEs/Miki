@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+const Customer = require('../models/customer');
+const Pets = require('../models/pet');
 
 /* Sample REST service  (placeholder) 
 router.get('/customers', function(req, res, next) {
@@ -7,7 +9,7 @@ router.get('/customers', function(req, res, next) {
 });
 */
 
-const Customer = require('../models/customer');
+
 router.get('/customers',(req, res)=> {
 	Customer.find({}, (err, Customer)=> {
 	res.json(Customer);
@@ -17,6 +19,17 @@ router.get('/customers',(req, res)=> {
 router.get('/customers/:id',(req, res)=> {
 	Customer.findById({_id:req.params.id}, (err, Customer)=> {
 		res.json(Customer);
+	});
+});
+
+router.get('/customers/:id/pets', function(req, res) {
+	Pets.find({ownerId: req.params.id}, function(err, pets) {
+		if (err) {
+			console.error(err);
+			res.sendStatus(500); 
+		} else {
+			res.json(pets);
+		}
 	});
 });
 
@@ -42,24 +55,38 @@ router.post('/customers', (req, res) => {
 			}
 		}) ;   
 });
-	
-// tengo que rehacer esto yo con el put (es copia del post)
-router.put('/customers/:id', (req, res) => {
+
+router.put('/customers/:id', (req, res, next) => {
 	Customer.findOne({_id : req.params.id }, function(err, customer) {
-		   console.log("holaaaaa")
+		if (err) {
+			return res.send(err);
+		}
+
+		// rellenamos los datos que vienen en la peticion
+		for(prop in req.body){
+			customer[prop] = req.body[prop];
+		}
 		
-		customer.save((err) => {
-					if (err) {
-						console.error(err);
-						res.status(500).send(err);//KO
-					} else {
-						res.json(customer);
-					}
-				}) ; 
+		console.log("Actualizando customer", customer);
+		
+//		const validationErrors = Validators.validateCustomer(customer);
+//		if(validationErrors) {
+//			return res.status(400).send(validationErrors);
+//		}
+
+		// save
+		customer.save(function(err) {
+			if (err) {
+				console.error(err);
+				res.sendStatus(500);//KO (TODO: elegir un codigo mas explicito)
+			} else {
+				res.json(customer);
+			}
+		});
 	});
 });
 
-// hasta aquio terngo que rehacer yo
+
 
 module.exports = router;
 

@@ -1,20 +1,37 @@
-<section class="flex-container">
-	<div data-ng-repeat="x in clients">
-		<article class="ficha">
-			<div class="cabecera">
-				<div class="head-1">
-			  		<div class="encabezado1">
-	    				<p id="nombre1" class="name1 citaList"><i class="fa fa-user" aria-hidden="true"></i> Cliente : <strong>{{x.firstName}}</strong></p>
-	    			</div>
-	    		</div> 
-				<div class="head-2">
-			  		<div class="encabezado2">
-	    				<a href="/customers/{{x._id}}"><button class="boton"><i class="fa fa-plus-square-o" aria-hidden="true"></i> Ver cliente</button> </a>
-	    			</div>
-	    		</div>
-			</div>
-		</article>
-    </div> 
-    <div class="centrar"><button class="boton"><a href="customers/add/"><i class="fa fa-cloud-upload" aria-hidden="true"></i>Añadir clientes</a></button></div>
+<div class="col-md-12">
+    <div class="card">
+        <div class="header">
+            <h4 class="title">CLIENTES DOOGIE VET</h4>
+            <p class="category">Lista de clientes de nuestra veterinaria</p>
+        </div>
+        <div class="content table-responsive table-full-width">
+            <table class="table table-hover table-striped">
+                <thead>
+                	<th> </th> 
+                    <th>ID</th>
+                	<th>Nombre completo</th>
+                	<th>Telefono</th>
+                	<th>Email</th> 
+                	<th> </th> 
+                </thead>
+                <tbody>
+                	<div >
+                     <tr data-ng-repeat="x in clients">
+                     	<td><i class="pe-7s-users"></i></td>
+                     	<td>{{x._id}}</td>
+                     	<td>{{x.firstName}} {{x.lastName}}</td>
+                     	<td>{{x.phone}}</td>
+                     	<td>{{x.email}}</td>
+                     	<td><a href="/customers/{{x._id}}"><button class="btn"><i class="pe-7s-right-arrow" aria-hidden="true"></i> Ver cliente</button> </a></td>
+                     </tr>
+                   </div>
+                   
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+      <div><button class="btn-round btn btn-info "><a href="customers/add/"><i class="pe-7s-add-user" aria-hidden="true"></i>Añadir clientes</a></button></div>
     
-</section>
+</div>
+                    

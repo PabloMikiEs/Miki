@@ -2,12 +2,35 @@
 <html lang="es" ng-app="petStore">
 <head>
 	<base href="/">
-	<meta charset="UTF-8">
-	<title>PetStore Demo with AngularJs+Express+NodeJs+MongoDb</title>
-	<link rel="stylesheet" href="/stylesheets/myStyle.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta charset="utf-8" /> 
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<title>PetStore Demo with AngularJs+Express+NodeJs+MongoDb</title>
+
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+
+
+    <!-- Bootstrap core CSS     -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Animation library for notifications   -->
+    <link href="assets/css/animate.min.css" rel="stylesheet"/>
+
+    <!--  Light Bootstrap Table core CSS    -->
+    <link href="assets/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
+	
+
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="assets/css/demo.css" rel="stylesheet" />
+
+
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
+    
+    	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
@@ -22,14 +45,134 @@
 	<script src="/app/customers/customers.module.js"></script>
 	<script src="/app/customers/customers.component.js"></script>
 	<script src="/app/customer/customer.module.js"></script>
-	<script src="/app/customer/customer.component.js"></script> 
+	<script src="/app/customer/customer.component.js"></script>
+	<script src="/app/pets/pets.component.js"></script> 
+	<script src="/app/pet/pet.component.js"></script> 
+    
+    
+</head>
+<body>
 
-	</head>
-	<body> 
- 
-	  <h1 class="titulo">Veterinaria Doogie</h1>
-	  <div data-ng-view></div> 
- 
+<div class="wrapper">
+    <div class="sidebar" data-color="#009688">
+    	<div class="sidebar-wrapper">
+            <div class="logo">
+                <a href="/" class="simple-text">
+                    Veterinaria Doogie
+                </a>
+            </div>
+
+            <ul class="nav">
+                <li  class="active">
+                    <a href="/">
+                        <i class="pe-7s-paper-plane"></i>
+                        <p>Inicio</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="pe-7s-users"></i>
+                        <p>Clientes</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/api/customers/"  target="_blank">
+                        <i class="pe-7s-angle-right"></i>
+                        <p>Api Clientes</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/pets/">
+                        <i class="pe-7s-medal"></i>
+                        <p>Mascotas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/api/pets/"  target="_blank">
+                        <i class="pe-7s-angle-right"></i>
+                        <p>Api Mascotas</p>
+                    </a>
+                </li>
+
+				<li class="active-pro">
+                    <a href="#">
+                        <i class="pe-7s-clock"></i>
+                        <p>Son las <script>document.write(new Date().getHours())</script>:<script>document.write(new Date().getMinutes())</script></p>
+                    </a>
+                    
+                </li>
+            </ul>
+    	</div>
+    </div>
+
+    <div class="main-panel">
+		<nav class="navbar navbar-default navbar-fixed">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Administración Veterinaria Doogie</a>
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>
+                            <a href="#" >
+                                <i class="pe-7s-refresh-2"></i>
+								<p class="hidden-lg hidden-md">Menu principal</p>
+                            </a>
+                        </li>
+                        <li>
+                           <a href="">
+                                <i class="pe-7s-search"></i>
+								<p class="hidden-lg hidden-md">Buscar</p>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#">
+                            <i class="pe-7s-power"></i>
+                                <p class="hidden-lg hidden-md">Salir</p>
+                            </a>
+                        </li>
+						<li class="separator hidden-lg hidden-md"></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+
+					
+					<div class="col-md-12">
+                        	  <div data-ng-view></div> 
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
 
 </body>
+        <!--   Core JS Files   -->
+    <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
+	
+	<!--  Notifications Plugin    -->
+    <script src="assets/js/bootstrap-notify.js"></script>
+
+    <!-- Light Bootstrap Table Core javascript and methods for Demo purpose -->
+	<script src="assets/js/light-bootstrap-dashboard.js"></script>
+
+	<!-- Light Bootstrap Table DEMO methods, don't include it in your project! -->
+	<script src="assets/js/demo.js"></script>
 </html>

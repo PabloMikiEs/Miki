@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('petsModule')
+angular.module('petsModule', [])
     .component('petsModule', {
         templateUrl:'/app/pets/pets.html',
         controller: function($scope,$http) {
@@ -8,7 +8,7 @@ angular.module('petsModule')
             	$scope.pets = response.data;
             }); 
      
-        	console.log("pepe")
+        	console.log("Modulo mascotas")
         }
 
     });
