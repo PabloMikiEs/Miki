@@ -56,21 +56,29 @@ router.put('/pets/:id', (req, res, next) => {
 		}
 		
 		console.log("Actualizando pets", pets);
-		
-//		const validationErrors = Validators.validatepet(pet);
-//		if(validationErrors) {
-//			return res.status(400).send(validationErrors);
-//		}
 
 		// save
 		pets.save(function(err) {
 			if (err) {
 				console.error(err);
-				res.sendStatus(500);//KO (TODO: elegir un codigo mas explicito)
+				res.sendStatus(500); 
 			} else {
 				res.json(pets);
 			}
 		});
+	});
+});
+
+router.delete('/pets/:id',function(req, res) {
+	console.log("/pets/" + req.params.id);
+	// borrado -->  model.findByIdAndRemove(req.params.id, function(err)....
+	Pets.findByIdAndRemove(req.params.id, function(err, pets) {
+		if (err) {
+			console.error(err);
+			res.sendStatus(500); 
+		} else {
+			res.sendStatus(200);
+		}
 	});
 });
 

@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const Customer = require('../models/customer');
-const Pets = require('../models/pet');
+/*const Pets = require('../models/pet');*/
 
 /* Sample REST service  (placeholder) 
 router.get('/customers', function(req, res, next) {
@@ -35,7 +35,7 @@ router.get('/customers/:id/pets', function(req, res) {
 
 router.post('/customers', (req, res) => {
 	   var customer = new Customer(req.body);
-	  // como pasmos el req.body por Customer no hace falta rellenar esto
+	  // como pasamos el req.body por Customer no hace falta rellenar esto
 	   /*customer.dni = req.body.dni;
 	   customer.firstName = req.body.firstName;
 	   customer.lastName = req.body.lastName;
@@ -78,7 +78,7 @@ router.put('/customers/:id', (req, res, next) => {
 		customer.save(function(err) {
 			if (err) {
 				console.error(err);
-				res.sendStatus(500);//KO (TODO: elegir un codigo mas explicito)
+				res.sendStatus(500);
 			} else {
 				res.json(customer);
 			}

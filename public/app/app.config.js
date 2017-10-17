@@ -22,6 +22,9 @@ angular.module('petStore')
             .when("/customers/:customerId/pets/add",{
                 template: "<pet-module></pet-module>" 
             })
+            .when("/appointments",{
+                template: "<appointments-module></appointments-module>" 
+            })
             .otherwise({
                 template: "Other111"
             });

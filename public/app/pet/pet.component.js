@@ -11,15 +11,14 @@ angular.module('petModule', ["ngRoute"])
     .controller('petController',function($scope, $http, $location, $routeParams){
     	console.log("inicializando el PetController...");
     	
-    	if(isNaN(+$routeParams.id)) {
+    	if(typeof $routeParams.id !== 'undefined' ) {
 	    	$http.get("/api/pets/" + $routeParams.id).then(function(response) {
 	    		console.log("Response /api/pets/" + $routeParams.id, response);
 	    		$scope.pet = response.data;
 	    	});    	
     	} else {
     		$scope.pet = {};
-    		// aqui hacemos un if para coger el customer id como 
-    		// $scope.pet.ownerId = $routeParams.costumerId;
+    		$scope.pet.ownerId = $routeParams.customerId;
     	}
 
     	$scope.submit = function() {
@@ -33,10 +32,19 @@ angular.module('petModule', ["ngRoute"])
     		console.log("Update pet:", $scope.pet);
     		$http.put("/api/pets/" + $scope.pet._id, $scope.pet).then(function(response){
     			$scope.pet = response.data;
+    			alert("Mascota actualizada");
     		});
     	}
     	
-//    	$scope.isNew = function() {
-//    		return $scope.pet === undefined || $scope.pet._id === undefined;
-//    	}
+    	$scope.delete = function() { 
+    		$http.delete("/api/pets/" + $scope.pet._id, $scope.pet).then(
+					function(response) {
+						alert("Mascota borrada");
+						$scope.pet = response.data;
+						history.back();
+					}, function() {
+						alert("Ha fallado el borrado!");
+						history.back();
+					});
+    	}
     });

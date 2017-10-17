@@ -1,5 +1,4 @@
-const mongoose = require('mongoose');
-//const Customer = mongoose.model('Customer');
+const mongoose = require('mongoose'); 
 
 mongoose.Promise = global.Promise;
 const Schema = mongoose.Schema;
