@@ -8,7 +8,7 @@ angular.module('customersModule')
             	$scope.clients = response.data;
             }); 
      
-        	console.log("pepe")
+        	console.log("Api customers")
         }
 
     });

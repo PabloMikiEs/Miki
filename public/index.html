@@ -36,6 +36,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-resource.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script> 
+<!-- 	<script src="app/bower_components/angular-momentjs/angular-momentjs.js"></script> -->
 	
 	
 	<script src="/app/app.module.js"></script>
@@ -48,6 +50,7 @@
 	<script src="/app/pets/pets.component.js"></script> 
 	<script src="/app/pet/pet.component.js"></script> 
     <script src="/app/appointments/appointments.component.js"></script> 
+    <script src="/app/appointmentDetail/appointment.component.js"></script> 
     
 </head>
 <body>
@@ -72,6 +75,12 @@
                     <a href="/appointments">
                         <i class="pe-7s-stopwatch"></i>
                         <p>Citas</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/appointments/59e6f9bdacad3a1cb43cf169"  target="_blank">
+                        <i class="pe-7s-angle-right"></i>
+                        <p>Ejemplo cita</p>
                     </a>
                 </li>
                 <li>
@@ -103,6 +112,7 @@
                     <a href="#">
                         <i class="pe-7s-clock"></i>
                         <p>Son las <script>document.write(new Date().getHours())</script>:<script>document.write(new Date().getMinutes())</script></p>
+                    
                     </a>
                     
                 </li>

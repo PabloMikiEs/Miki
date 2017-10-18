@@ -5,7 +5,7 @@ mongoose.Promise = global.Promise;
 const Schema = mongoose.Schema;
 
 const appointmentSchema = new Schema({
-	dateHour : {type : String, required : true},
+	dateHour : {type : Date, required : true},
 	petID : {type: Schema.ObjectId, ref: "Pet", required: true},
 	status : {type : String, required : true}
 });

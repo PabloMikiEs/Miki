@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var moment = require('moment');
 
 //var sample = require('./routes/sample');
 //var customer2 = require('./routes/customers');
@@ -31,14 +32,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api', require('./routes/customers')); //todo lo que empiece por api está delegado en customer
 app.use('/api', require('./routes/pets'));
 app.use('/api', require('./routes/appointments'));
-//require('./test/customer_crud_tests.js');
+//require('./test/appointments_crud_tests.js');
 
 
 //Front End
 app.all("*", (req, res) => {
 res.sendFile(path.resolve("public/index.html"));
 })
-
 
 
 module.exports = app;
@@ -82,30 +82,5 @@ pet.save((err) => {
            console.log(pet);
        }
    })*/
-//const Appointment = require('./models/appointment');
-//const appointment  = new Appointment({
-//	"dateHour" : "09:00",
-//	"petID" : "59e0b02bd49a122348b5bff4",
-//	"state" : "1"
-//}); 
-//appointment.save((err) => {
-//       if (err) {
-//           console.log(err);
-//       } else {
-//           console.log(appointment);
-//       }
-//   })
-//   const appointment1  = new Appointment({
-//	"dateHour" : "09:30",
-//	"petID" : "59e5dc0108e9fd1c18993091",
-//	"state" : "2"
-//}); 
-//appointment1.save((err) => {
-//       if (err) {
-//           console.log(err);
-//       } else {
-//           console.log(appointment);
-//       }
-//   })
 
 

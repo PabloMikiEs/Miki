@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const Customer = require('../models/customer');
-/*const Pets = require('../models/pet');*/
+const Pets = require('../models/pet');
 
 /* Sample REST service  (placeholder) 
 router.get('/customers', function(req, res, next) {
