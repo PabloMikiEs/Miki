@@ -2,22 +2,30 @@ const Appointment = require('../models/appointment');
 
 // Creamos uns citas para hacer test
 var appointment1  = new Appointment({
-	"dateHour" : "2017-10-18T10:00:00.197Z",
+	"dateHourStart" : "2017-10-18T10:00:00.197Z",
+	"dateHourEnd" : "2017-10-18T10:30:00.197Z",
+	"ownerID" : "59dc7a8069107018902e79c7",
 	"petID" : "59e0b02bd49a122348b5bff4",
 	"status" : "1"
 }); 
 var appointment2  = new Appointment({
-	"dateHour" : "2017-10-17T10:30:00.197Z",
+	"dateHourStart" : "2017-10-17T09:30:00.197Z",
+	"dateHourEnd" : "2017-10-17T10:00:00.197Z",
+	"ownerID" : "59dc7a8069107018902e79c7",
 	"petID" : "59e5dc0108e9fd1c18993091",
 	"status" : "2"
 }); 
 var appointment3  = new Appointment({
-	"dateHour" : "2017-10-18T10:30:00.197Z",
+	"dateHourStart" : "2017-10-18T10:30:00.197Z",
+	"dateHourEnd" : "2017-10-18T11:00:00.197Z",
+	"ownerID" : "59dc7a8069107018902e79c7",
 	"petID" : "59e0b02bd49a122348b5bff4",
 	"status" : "3"
 });
 var appointment4  = new Appointment({
-	"dateHour" : "2017-10-17T10:30:00.197Z",
+	"dateHourStart" : "2017-09-16T16:30:00.197Z",
+	"dateHourEnd" : "2017-09-16T17:00:00.197Z",
+    "ownerID" : "59dc7a8069107018902e79c7",
 	"petID" : "59e5dc0108e9fd1c18993091",
 	"status" : "2"
 }); 

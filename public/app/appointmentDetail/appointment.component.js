@@ -12,13 +12,14 @@ angular.module('appointmentModule', ["ngRoute"])
     	
     	console.log("inicializando el appointmentDetailsController...");
     	
-    	if(isNaN(+$routeParams.id)) {
+    	//if(isNaN(+$routeParams.id)) {
 	    	$http.get("/api/appointments/" + $routeParams.id).then(function(response) { 
 	    		$scope.appointment = response.data;
+	    		console.log("pepe");
 	    	});   	
-    	} else {
-    		$scope.appointment = {};
-    	}
+    	//} else {
+    	//	$scope.appointment = {};
+    	//}
 
 //    	$scope.submit = function() {
 //    		console.log("Insert customer:", $scope.customer);

@@ -9,11 +9,11 @@ angular.module('appointmentsModule', [])
  
 
 })
-.controller('AppointmentsController',function($scope, $http,){
+.controller('AppointmentsController',function($scope, $http, $routeParams){
 	
-	$http.get('/api/appointments').then(function(response) {
+	//$routeParams = ":fromdate/:todate";
+	$http.get('/api/appointments/'/*+$routeParams*/).then(function(response) {
     	$scope.appointments = response.data; 
-    	/*moment($scope.appointments).format('LLLL')= response.data;*/
     }); 
 	
 //	$http.get('/api/appointments' + $routeParams.fromdate + $routeParams.todate).then(function(response) {

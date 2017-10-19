@@ -31,6 +31,9 @@ angular.module('petStore')
             .when("/appointments/:fromdate/:todate",{
                 template: "<appointments-module></appointments-module>" 
             })
+            .when("/appointments/:month",{
+                template: "<appointments-module></appointments-module>" 
+            })
             .otherwise({
                 template: "Other111"
             });
