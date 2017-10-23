@@ -1,29 +1,26 @@
-<div class="content" ng-controller="AppointmentsController">
+<div class="content">
      <div class="container-fluid">
          <div class="row">
          <div class="col-md-12">
 			<div class="card">
 		       	<div class="header">
-		           <h4 class="title">CITAS DOOGIE VET</h4>
-		           <p class="category">Lista total de citas</p>
+		           <h4 class="title">CITAS DEL DÍA </h4> 
 		       	</div>
 		       	<div class="content table-responsive table-full-width">
 		           	<table class="table table-hover table-striped">
 						<thead> 
-		               		<th>ID</th>
-		               		<th>dateHour</th>
-		               		<th>petID</th>
-		               		<th>status</th> 
-		               		<th> </th> 
+		               		<th>hora</th>
+		               		<th>cita</th> 
 		               </thead>
 		               <tbody>
-		               		<tr data-ng-repeat="appo in appointments"> 
-								<td>{{appo._id}}</td>
-		                    	<td>{{appo.dateHour}}</td>
-		                    	<td>{{appo.petID}}</td>
-		                    	<td>{{appo.status}}</td>
-		                    	<td><a href="/appointmentdetail/{{appo._id}}"><button class="btn"><i class="pe-7s-right-arrow" aria-hidden="true"></i>  Ver cita</button> </a></td>
-		                    </tr>
+		               				<tr ng-repeat="h in listHourApps">
+			<td>{{h.hour}}</td> 
+			<td><span ng-show="h.app">Nombre mascota: {{h.app.petId.name}}, Dueño: {{h.app.petId.customerId.firstName}}<span></td> 
+			<td>
+				<a ng-show="h.app" ng-click="abrir(h.app._id)"><i class="material-icons">edit</i></a>
+				<a ng-show="!h.app" ng-click="abrir(h.app._id)"><i class="material-icons">add</i></a>
+			</td>
+		</tr>
 		               </tbody>
 		           </table>
 				 

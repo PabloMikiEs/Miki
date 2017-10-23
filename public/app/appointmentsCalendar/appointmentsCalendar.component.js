@@ -49,5 +49,9 @@ angular.module('appointmentsCalendarModule', [])
              
                 return $scope.dates = dates;
           	});	
+        	
+        	$scope.open = (date) => { 
+                $location.path("/appointments/" + moment(date).format('YYYYMMDD'))
+       	 };
         }
 });

@@ -2763,12 +2763,38 @@ body > .navbar-collapse {
 	max-width: 100%;
     /*width: 200px;*/
 }   
+
+
+
+.head-calendar{
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+tbody {
+	    border-radius: 4px; 
+}
     
+.tdcalendar{
+	padding:15px;
+	border: 2px solid #009688;
+	background: #E5F2F2;
+} 
+th {
+	padding:5px;
+	text-align:center; 
+}   
+.col-centered{
+    float: none;
+    margin: 0 auto;
+    text-align:center;
+}
     
-    
-    
-    
-    
-    
-    
+.btn-green {
+	border: 2px solid #009688;
+    background: #E5F2F2;
+}
+.calendario{
+	margin-top:20px;
+}   
     

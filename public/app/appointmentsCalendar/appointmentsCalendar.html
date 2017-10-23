@@ -1,4 +1,4 @@
-<div class="content" ng-controller="AppointmentsController">
+<div class="content">
      <div class="container-fluid">
          <div class="row">
          <div class="col-md-12">
@@ -7,40 +7,44 @@
 		           <h4 class="title">CITAS DOOGIE VET</h4>
 		           <p class="category">Lista total de citas</p>
 		       	</div>
-		       	<div class="content table-responsive table-full-width">
-		           	
-				<section>
-					<nav class="nav">
-							<a href="appointments/{{p}}"><i class="pe-7s-angle-left"></i></a>
-							{{m | date:'MMMM yyyy'}}
-							<a href="appointments/{{n}}"><i class="pe-7s-angle-right"></i></a> 
-						
-					</nav>
-					<!-- <calendar></calendar> -->
-					<div class="calendario">		
-						<table class="striped"> 
-					        <tbody>
-								<tr class="days">
+ 	           	 
+				<section class="content nav">
+						<div class="row col-md-12">
+                                <div class="col-md-2 col-md-offset-3">
+                                    <a href="appointments/{{p}}"><button class="btn btn-default btn-block btn-green"><i class="pe-7s-angle-left"></i></button></a>
+                                </div>
+                                <div class="col-md-2">
+                                    <button class="btn btn-default btn-block btn-green" >{{m | date:'MMMM yyyy'}}</button>
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="appointments/{{n}}"><button class="btn btn-default btn-block btn-green"><i class="pe-7s-angle-right"></i></button></a>
+                                </div>
+                 		</div>
+  
+						<div class="row">		
+							<table class="calendario col-md-8 col-md-offset-2"> 
+								<thead>
 							       <th title="Lunes">Lunes</th>
 							       <th title="Martes">Martes</th>
 							       <th title="Miercoles">Miercoles</th>
 							       <th title="Jueves">Jueves</th>
 							       <th title="Viernes">Viernes</th>
-							       <th title="S�bado">Sábado</th>
+							       <th title="Sábado">Sábado</th>
 							       <th title="Domingo">Domingo</th>
-								</tr>
-								<tr ng-repeat="days in dates">
-									<td ng-repeat="day in days"> 
-						            	<b>{{ day.date }}</b><br> 
-						                <h5 class="center-align" ng-click="abrir(day.date)">{{day.contador}}</h5>
-						        	</td>
-						     	</tr>
-					        </tbody>
-						</table>
-					</div>
+                				</thead>
+					        	<tbody>
+									<tr ng-repeat="days in dates">
+										<td ng-repeat="day in days" class="tdcalendar"> 
+						            		<b>{{ day.date }}</b><br> 
+						                	<div class="col-centered" ng-click="open(day.date)">{{day.contador}}</div>
+						        		</td>
+						     		</tr>
+					        	</tbody>
+							</table>
+						</div>
 				</section>
 				 
-		       </div>
+	 
 		   </div>
 		   <div><button class="btn-round btn btn-info "><a href="appointmentdetail/add/"><i class="pe-7s-add-user" aria-hidden="true"></i>  Nueva cita</a></button></div>
 		 </div> 
