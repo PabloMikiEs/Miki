@@ -23,19 +23,22 @@ angular.module('petStore')
                 template: "<pet-module></pet-module>" 
             })
             .when("/appointments",{
-                template: "<appointments-module></appointments-module>" 
+            	template: "<appointments-calendar-module></appointments-calendar-module>" 
             })
-            .when("/appointments/:id",{
-                template: "<appointment-module></appointment-module>" 
+            .when("/appointmentdetail/:id",{
+                template: "<appointment-detail-module></appointment-detail-module>" 
             })
             .when("/appointments/:fromdate/:todate",{
-                template: "<appointments-module></appointments-module>" 
+                template: "<appointments-calendar-module></appointments-calendar-module>" 
             })
             .when("/appointments/:month",{
-                template: "<appointments-module></appointments-module>" 
+                template: "<appointments-calendar-module></appointments-calendar-module>" 
+            })
+            .when("/appointmentsday",{
+                template: "<appointments-day-calendar-module></appointments-day-module>" 
             })
             .otherwise({
-                template: "Other111"
+                template: "Other page"
             });
     });
 

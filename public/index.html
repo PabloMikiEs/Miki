@@ -26,18 +26,18 @@
 
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+<!--     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'> -->
     <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
     
-    	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-resource.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.min.js"></script>
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script> 
-<!-- 	<script src="app/bower_components/angular-momentjs/angular-momentjs.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.19.1/locale/es.js"></script>
 	
 	
 	<script src="/app/app.module.js"></script>
@@ -48,9 +48,10 @@
 	<script src="/app/customer/customer.module.js"></script>
 	<script src="/app/customer/customer.component.js"></script>
 	<script src="/app/pets/pets.component.js"></script> 
-	<script src="/app/pet/pet.component.js"></script> 
-    <script src="/app/appointments/appointments.component.js"></script> 
-    <script src="/app/appointmentDetail/appointment.component.js"></script> 
+	<script src="/app/pet/pet.component.js"></script>  
+    <script src="/app/appointmentDetail/appointment.component.js"></script>
+    <script src="/app/appointmentsCalendar/appointmentsCalendar.component.js"></script>
+    <script src="/app/appointmentsDay/appointmentsDay.component.js"></script>    
     
 </head>
 <body>
@@ -74,13 +75,13 @@
                 <li>
                     <a href="/appointments">
                         <i class="pe-7s-stopwatch"></i>
-                        <p>Citas</p>
+                        <p>Calendario Citas</p>
                     </a>
                 </li>
                 <li>
                     <a href="api/appointments/201710/201711"  target="_blank">
                         <i class="pe-7s-angle-right"></i>
-                        <p>Citas Octubre</p>
+                        <p>Api Citas Octubre</p>
                     </a>
                 </li>
                 <li>

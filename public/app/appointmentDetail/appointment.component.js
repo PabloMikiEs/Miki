@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('appointmentModule', ["ngRoute"])
-    .component('appointmentModule', {
+angular.module('appointmentDetailModule', ["ngRoute"])
+    .component('appointmentDetailModule', {
         templateUrl:'/app/appointmentDetail/appointment.html',
         controller: function($scope,$http,$routeParams) {
         	console.log("Inicializando appointmentModule ...");
@@ -13,7 +13,7 @@ angular.module('appointmentModule', ["ngRoute"])
     	console.log("inicializando el appointmentDetailsController...");
     	
     	//if(isNaN(+$routeParams.id)) {
-	    	$http.get("/api/appointments/" + $routeParams.id).then(function(response) { 
+	    	$http.get("/api/appointmentdetail/" + $routeParams.id).then(function(response) { 
 	    		$scope.appointment = response.data;
 	    		console.log("pepe");
 	    	});   	

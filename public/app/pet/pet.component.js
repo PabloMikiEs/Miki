@@ -25,6 +25,7 @@ angular.module('petModule', ["ngRoute"])
     		console.log("Insert pet:", $scope.pet);
     		$http.post("/api/pets", $scope.pet).then(function(response){
     			$scope.pet = response.data;
+    			alert("Mascota añadida");
     		});
     	}
 

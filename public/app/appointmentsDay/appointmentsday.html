@@ -17,22 +17,20 @@
 		               		<th> </th> 
 		               </thead>
 		               <tbody>
-		               	<div >
-		                    <tr data-ng-repeat="appo in appointments"> 
+		               		<tr data-ng-repeat="appo in appointments"> 
 								<td>{{appo._id}}</td>
 		                    	<td>{{appo.dateHour}}</td>
 		                    	<td>{{appo.petID}}</td>
 		                    	<td>{{appo.status}}</td>
-		                    	<td><a href="/appointments/{{appo._id}}"><button class="btn"><i class="pe-7s-right-arrow" aria-hidden="true"></i>  Ver cita</button> </a></td>
+		                    	<td><a href="/appointmentdetail/{{appo._id}}"><button class="btn"><i class="pe-7s-right-arrow" aria-hidden="true"></i>  Ver cita</button> </a></td>
 		                    </tr>
-		                  </div>
 		               </tbody>
 		           </table>
 				 
 		       </div>
 		   </div>
-		   <div><button class="btn-round btn btn-info "><a href="appointments/add/"><i class="pe-7s-add-user" aria-hidden="true"></i>  Nueva cita</a></button></div>
-    <div><button class="btn-round btn btn-info "><a href="/appointments/:201710/:201711"><i class="pe-7s-add-user" aria-hidden="true"></i>Rutas mes Octubre</a></button></div>
+		   <div><button class="btn-round btn btn-info "><a href="appointmentdetail/add/"><i class="pe-7s-add-user" aria-hidden="true"></i>  Nueva cita</a></button></div>
+    <div><button class="btn-round btn btn-info "><a href="/appointments/:201710/:201711"><i class="pe-7s-add-user" aria-hidden="true"></i>Citas mes Octubre</a></button></div>
     
 		 </div> 
 		<div class="col-md-12">

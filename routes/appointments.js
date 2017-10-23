@@ -21,26 +21,31 @@ router.get('/appointments/:id',(req, res)=> {
 
 
 router.get('/appointments/:fromdate/:todate',(req, res)=> {
-	var fechaInicio = moment(req.params.fromdate,'YYYYMM');
-	var fechaFin = moment(req.params.todate,'YYYYMM');
-	
-	console.log("fechas..");
-	Appointment.find({ "dateHourStart": { $gte:fechaInicio, $lt:fechaFin } }, (err, appointments)=> {
-        if (err) {
-            res.json({ success: false, message: err });
-        } else {
-        	var resultado = appointments.reduce(function (element) {
- 
-//        		if(Array.isArray(appointments)){element = element.concat(appointments)}else{acc.push(appointments)}
-//            	}
-        		
-        		
-        	});
-            //res.json(resultado);
-        	res.json(appointments);
-        }
-        	 
-        
+    var fechaInicio = moment(req.params.fromdate,'YYYYMM');
+    var fechaFin = moment(req.params.todate,'YYYYMM');
+    
+    Appointment.find({ "dateHourStart": { $gte:fechaInicio, $lt:fechaFin } }, (err, appointments)=> {
+		if (err) {
+			console.error(err);
+			return res.sendStatus(500);//KO (TODO: elegir un codigo mas explicito)
+		}
+		
+        var appointmentsByDate = appointments.reduce(function(appointmentsByDate, item){
+            var date = moment(item.dateHourStart).format('YYYYMMDD');
+            var time = moment(item.dateHourStart).format('hh:mm');
+            if(appointmentsByDate[date] == undefined) {
+            	appointmentsByDate[date] = {};
+            }
+            if(appointmentsByDate[date][time] == undefined) {
+            	appointmentsByDate[date][time] = item;
+            }
+            
+            return appointmentsByDate;
+        }, {});
+		
+		
+        res.status(200).send(appointmentsByDate);
+
 	}).populate({
 		path: 'petID', 
 		select: 'name specie', 
@@ -49,7 +54,8 @@ router.get('/appointments/:fromdate/:todate',(req, res)=> {
 				path: 'ownerId' , 
 				select: 'firstName' 
 			}
-	})
+	}
+    ).sort({'dateTimeStart': 1})	
 	
 });
 
@@ -74,7 +80,6 @@ router.get('/appointments/:fromdate/:todate',(req, res)=> {
 
 
 module.exports = router;
-
 
 
 

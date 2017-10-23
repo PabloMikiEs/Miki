@@ -30,21 +30,6 @@ router.post('/pets', (req, res) => {
 		}) ;   
 });
 
-
-
-router.post('/pets', (req, res) => {
-	   var pet = new Pet (req.body);
- 
-	   pet.save((err) => {
-			if (err) {
-				console.error(err);
-				res.status(500).send(err);//KO
-			} else {
-				res.json(pets);
-			}
-		}) ;   
-});
-
 router.put('/pets/:id', (req, res, next) => {
 	Pets.findOne({_id : req.params.id }, function(err, pets) {
 		if (err) {
