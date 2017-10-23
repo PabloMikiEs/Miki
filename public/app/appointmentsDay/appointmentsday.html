@@ -13,14 +13,14 @@
 		               		<th>cita</th> 
 		               </thead>
 		               <tbody>
-		               				<tr ng-repeat="h in listHourApps">
-			<td>{{h.hour}}</td> 
-			<td><span ng-show="h.app">Nombre mascota: {{h.app.petId.name}}, Dueño: {{h.app.petId.customerId.firstName}}<span></td> 
-			<td>
-				<a ng-show="h.app" ng-click="abrir(h.app._id)"><i class="material-icons">edit</i></a>
-				<a ng-show="!h.app" ng-click="abrir(h.app._id)"><i class="material-icons">add</i></a>
-			</td>
-		</tr>
+							<tr ng-repeat="hour in listHourApps">
+								<td>{{h.hour}}</td> 
+								<td><span ng-show="hour.app">Nombre mascota: {{hour.app.petId.name}}, Dueño: {{hour.app.petId.customerId.firstName}}<span></td> 
+								<td>
+									<a ng-show="hour.app" ng-click="abrir(h.app._id)">edit</a>
+									<a ng-show="!hour.app" ng-click="abrir(h.app._id)">añadir</a>
+								</td>
+							</tr>
 		               </tbody>
 		           </table>
 				 
