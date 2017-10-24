@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('appointmentsDayModule', [])
-    .component('appointmentsDayrModule', {
+    .component('appointmentsDayModule', {
         templateUrl:'/app/appointmentsDay/appointmentsday.html',
         controller: function ($scope, $http, $routeParams) {
-
+        	console.log("hola")
 	            if ($routeParams.date) {
 	 
 	                 var date = moment($routeParams.date, 'YYYYMM');

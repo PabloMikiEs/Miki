@@ -34,7 +34,7 @@ angular.module('petStore')
             .when("/appointments/:month",{
                 template: "<appointments-calendar-module></appointments-calendar-module>" 
             })
-            .when("/appointments/day/:day?",{
+            .when("/appointment/day/:day",{
                 template: "<appointments-day-module></appointments-day-module>"
             })
             .otherwise({

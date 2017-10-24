@@ -36,7 +36,7 @@
 									<tr ng-repeat="days in dates">
 										<td ng-repeat="day in days" class="tdcalendar"> 
 						            		<b>{{ day.date }}</b><br> 
-						                	<div class="col-centered" ng-click="open(day.date)">{{day.contador}}</div>
+						                	<a href="/appointment/day/{{m | date:'yyyyMM'}}{{day.date}}"><div class="col-centered">{{day.contador}}</div></a>
 						        		</td>
 						     		</tr>
 					        	</tbody>
@@ -46,8 +46,7 @@
 				 
 	 
 		   </div>
-		   <div><button class="btn-round btn btn-info "><a href="appointmentdetail/add/"><i class="pe-7s-add-user" aria-hidden="true"></i>  Nueva cita</a></button></div>
-		 </div> 
+		    </div> 
 		<div class="col-md-12">
 			<button class="btn btn-info  pull-right"><a href="/"><i class="pe-7s-back"></i></a></button>
 		</div>   

@@ -7,22 +7,22 @@
 		           <h4 class="title">CITAS DEL DÍA </h4> 
 		       	</div>
 		       	<div class="content table-responsive table-full-width">
-		           	<table class="table table-hover table-striped">
-						<thead> 
-		               		<th>hora</th>
-		               		<th>cita</th> 
-		               </thead>
-		               <tbody>
-							<tr ng-repeat="hour in listHourApps">
-								<td>{{h.hour}}</td> 
-								<td><span ng-show="hour.app">Nombre mascota: {{hour.app.petId.name}}, Dueño: {{hour.app.petId.customerId.firstName}}<span></td> 
-								<td>
-									<a ng-show="hour.app" ng-click="abrir(h.app._id)">edit</a>
-									<a ng-show="!hour.app" ng-click="abrir(h.app._id)">añadir</a>
-								</td>
-							</tr>
-		               </tbody>
-		           </table>
+<!-- 		           	<table class="table table-hover table-striped"> -->
+<!-- 						<thead>  -->
+<!-- 		               		<th>hora</th> -->
+<!-- 		               		<th>cita</th>  -->
+<!-- 		               </thead> -->
+<!-- 		               <tbody> -->
+<!-- 							<tr ng-repeat="hour in listHourApps"> -->
+<!-- 								<td>{{h.hour}}</td>  -->
+<!-- 								<td><span ng-show="hour.app">Nombre mascota: {{hour.app.petId.name}}, Dueño: {{hour.app.petId.customerId.firstName}}<span></td>  -->
+<!-- 								<td> -->
+<!-- 									<a ng-show="hour.app" ng-click="abrir(h.app._id)">edit</a> -->
+<!-- 									<a ng-show="!hour.app" ng-click="abrir(h.app._id)">añadir</a> -->
+<!-- 								</td> -->
+<!-- 							</tr> -->
+<!-- 		               </tbody> -->
+<!-- 		           </table> -->
 				 
 		       </div>
 		   </div>
