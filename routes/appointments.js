@@ -21,8 +21,8 @@ router.get('/appointments/:id',(req, res)=> {
 
 
 router.get('/appointments/:fromdate/:todate',(req, res)=> {
-    var fechaInicio = moment(req.params.fromdate,'YYYYMM');
-    var fechaFin = moment(req.params.todate,'YYYYMM');
+    var fechaInicio = moment(req.params.fromdate,'YYYYMMDD');
+    var fechaFin = moment(req.params.todate,'YYYYMMDD');
     
     Appointment.find({ "dateHourStart": { $gte:fechaInicio, $lt:fechaFin } }, (err, appointments)=> {
 		if (err) {
@@ -44,7 +44,7 @@ router.get('/appointments/:fromdate/:todate',(req, res)=> {
         }, {});
 		
 		
-        res.status(200).send(appointmentsByDate);
+        res.json(appointmentsByDate);
 
 	}).populate({
 		path: 'petID', 

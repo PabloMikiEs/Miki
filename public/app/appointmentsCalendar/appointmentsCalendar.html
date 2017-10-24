@@ -11,32 +11,32 @@
 				<section class="content nav">
 						<div class="row col-md-12">
                                 <div class="col-md-2 col-md-offset-3">
-                                    <a href="appointments/{{p}}"><button class="btn btn-default btn-block btn-green"><i class="pe-7s-angle-left"></i></button></a>
+                                    <a href="appointments/{{previus}}"><button class="btn btn-default btn-block btn-green"><i class="pe-7s-angle-left"></i></button></a>
                                 </div>
                                 <div class="col-md-2">
-                                    <button class="btn btn-default btn-block btn-green" >{{m | date:'MMMM yyyy'}}</button>
+                                    <button class="btn btn-default btn-block btn-green" >{{actual | date:'MMMM yyyy'}}</button>
                                 </div>
                                 <div class="col-md-2">
-                                    <a href="appointments/{{n}}"><button class="btn btn-default btn-block btn-green"><i class="pe-7s-angle-right"></i></button></a>
+                                    <a href="appointments/{{next}}"><button class="btn btn-default btn-block btn-green"><i class="pe-7s-angle-right"></i></button></a>
                                 </div>
                  		</div>
   
 						<div class="row">		
 							<table class="calendario col-md-8 col-md-offset-2"> 
-								<thead>
-							       <th title="Lunes">Lunes</th>
-							       <th title="Martes">Martes</th>
-							       <th title="Miercoles">Miercoles</th>
-							       <th title="Jueves">Jueves</th>
-							       <th title="Viernes">Viernes</th>
-							       <th title="Sábado">Sábado</th>
-							       <th title="Domingo">Domingo</th>
+								<thead> 
+							       <th>Lunes</th>
+							       <th>Martes</th>
+							       <th>Miercoles</th>
+							       <th>Jueves</th>
+							       <th>Viernes</th>
+							       <th>Sábado</th>
+							       <th>Domingo</th>
                 				</thead>
 					        	<tbody>
 									<tr ng-repeat="days in dates">
 										<td ng-repeat="day in days" class="tdcalendar"> 
 						            		<b>{{ day.date }}</b><br> 
-						                	<a href="/appointment/day/{{m | date:'yyyyMM'}}{{day.date}}"><div class="col-centered">{{day.contador}}</div></a>
+						                	<a href="/appointment/day/{{actual | date:'yyyyMM'}}{{day.date}}"><div class="col-centered">{{day.contador}}</div></a>
 						        		</td>
 						     		</tr>
 					        	</tbody>
@@ -48,5 +48,5 @@
 		   </div>
 		    </div> 
 		<div class="col-md-12">
-			<button class="btn btn-info  pull-right"><a href="/"><i class="pe-7s-back"></i></a></button>
+			<button class="btn btn-info  pull-right" ng-click="doTheBack()"><i class="pe-7s-back"></i></button>
 		</div>   

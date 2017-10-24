@@ -11,9 +11,9 @@ angular.module('appointmentsCalendarModule', [])
         		month = moment($routeParams.month,"YYYYMM");
         	}
         	
-        	$scope.m = month.toDate();
-        	$scope.p = moment(month).add(-1,'M').format("YYYYMM");
-        	$scope.n = moment(month).add(1,'M').format("YYYYMM");
+        	$scope.actual = month.toDate();
+        	$scope.previus = moment(month).add(-1,'M').format("YYYYMM");
+        	$scope.next = moment(month).add(1,'M').format("YYYYMM");
         	var monthI =  moment(month.toDate()).format("YYYYMM");
         	var monthF = moment(month).add(1,'M').toDate();
         	
@@ -24,14 +24,14 @@ angular.module('appointmentsCalendarModule', [])
         		$scope.cells.push({});
         	}
         	
-        	$http.get("/api/appointments/"+monthI+"/"+$scope.n).then(function(res){
+        	$http.get("/api/appointments/"+monthI+"/"+$scope.next).then(function(res){
         		
         		$scope.app = res.data;
         		
-        		for(var m = moment(month); m.isBefore(monthF); m.add(1,'days')){
+        		for(var actual = moment(month); actual.isBefore(monthF); actual.add(1,'days')){
         			
-        			var dayf = m.format("D");
-        			var datef = m.format("YYYYMMDD");
+        			var dayf = actual.format("D");
+        			var datef = actual.format("YYYYMMDD");
         			
         			$scope.cells.push({
         				date: dayf,

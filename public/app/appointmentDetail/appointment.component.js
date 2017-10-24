@@ -38,4 +38,11 @@ angular.module('appointmentDetailModule', ["ngRoute"])
 //    	$scope.isNew = function() {
 //    		return $scope.customer === undefined || $scope.customer._id === undefined;
 //    	}
+	    	
+	    // Para regresar a la vista anterior
+        $scope.doTheBack = function() {
+        	 window.history.back();
+        };
+        	
+	    	
     });

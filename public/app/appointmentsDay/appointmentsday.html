@@ -4,32 +4,34 @@
          <div class="col-md-12">
 			<div class="card">
 		       	<div class="header">
-		           <h4 class="title">CITAS DEL DÍA </h4> 
+		           <h4 class="title">CITAS DEL {{dia}}</h4> 
 		       	</div>
 		       	<div class="content table-responsive table-full-width">
-<!-- 		           	<table class="table table-hover table-striped"> -->
-<!-- 						<thead>  -->
-<!-- 		               		<th>hora</th> -->
-<!-- 		               		<th>cita</th>  -->
-<!-- 		               </thead> -->
-<!-- 		               <tbody> -->
-<!-- 							<tr ng-repeat="hour in listHourApps"> -->
-<!-- 								<td>{{h.hour}}</td>  -->
-<!-- 								<td><span ng-show="hour.app">Nombre mascota: {{hour.app.petId.name}}, Dueño: {{hour.app.petId.customerId.firstName}}<span></td>  -->
-<!-- 								<td> -->
-<!-- 									<a ng-show="hour.app" ng-click="abrir(h.app._id)">edit</a> -->
-<!-- 									<a ng-show="!hour.app" ng-click="abrir(h.app._id)">añadir</a> -->
-<!-- 								</td> -->
-<!-- 							</tr> -->
-<!-- 		               </tbody> -->
-<!-- 		           </table> -->
+		           	<table class="table table-hover table-striped">
+						<thead> 
+		               		<th>hora</th>
+		               		<th>Especie</th>
+		               		<th>mascota</th>
+		               		<th>dueÃ±o</th> 
+		               		<th></th> 
+		               </thead>
+		               <tbody>
+							<tr ng-repeat="x in timetable">
+								<td>{{x.hour}}</td> 
+								<td>{{x.appoints.petID.specie}}</td> 
+								<td>{{x.appoints.petID.name}}</td>
+								<td>{{x.appoints.petID.ownerId.firstName}}</td> 
+								<td>
+									<a href="/appointmentdetail/{{x.appoints._id}}" ng-show="x.appoints._id" ><button class="btn"><i class="pe-7s-right-arrow" aria-hidden="true"></i> Ver cita</button> </a>
+									<a href="/appointmentdetail/{{x.appoints._id}}" ng-show="!x.appoints._id" ><button class="btn"><i class="pe-7s-right-arrow" aria-hidden="true"></i> AÃ±adir cita</button> </a>
+								</td>
+							</tr>
+		               </tbody>
+		           </table>
 				 
 		       </div>
 		   </div>
-		   <div><button class="btn-round btn btn-info "><a href="appointmentdetail/add/"><i class="pe-7s-add-user" aria-hidden="true"></i>  Nueva cita</a></button></div>
-    <div><button class="btn-round btn btn-info "><a href="/appointments/:201710/:201711"><i class="pe-7s-add-user" aria-hidden="true"></i>Citas mes Octubre</a></button></div>
-    
 		 </div> 
 		<div class="col-md-12">
-			<button class="btn btn-info  pull-right"><a href="/"><i class="pe-7s-back"></i></a></button>
+			<button class="btn btn-info  pull-right" ng-click="doTheBack()">><i class="pe-7s-back"></i></button>
 		</div>   
