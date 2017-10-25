@@ -12,32 +12,37 @@ angular.module('appointmentDetailModule', ["ngRoute"])
     	
     	console.log("inicializando el appointmentDetailsController...");
     	
-    	if(isNaN(+$routeParams.id)) {
-	    	$http.get("/api/appointments/" + $routeParams.id).then(function(response) { 
+	    	
+    	if ($routeParams.id){
+    		$http.get("/api/appointments/" + $routeParams.id).then(function(response) { 
 	    		$scope.appointment = response.data;
 	    		console.log("Response /api/appointments/" + $routeParams.id);
-	    	});   	
-    	} else {
+	    	}); 
+    		
+    	}
+    	else {
     		$scope.appointment = {};
+    		console.log("New Appointment", $routeParams.datetime);
+    		$scope.appointment.dateHourStart = moment($routeParams.datetime, 'YYYYMMDDhh:mm').toDate();
+    		$scope.appointment.dateHourEnd = moment($scope.appointment.dateTimeStart).add(30,'m').toDate();
+    		$scope.appointment.status = 0;
+    		
+    		
     	}
 
-//    	$scope.submit = function() {
-//    		console.log("Insert customer:", $scope.customer);
-//    		$http.post("/api/customers", $scope.customer).then(function(response){
-//    			$scope.customer = response.data;
-//    		});
+//    	if ($routeParams.datetime){
+//    		$http.get("/api/appointments/" + $routeParams.id).then(function(response) { 
+//	    		$scope.appointment = response.data;
+//	    		console.log("Response /api/appointments/" + $routeParams.id);
+//	    	}); 
+//    		
 //    	}
-//
-//    	$scope.edit = function() {
-//    		console.log("Update customer:", $scope.customer);
-//    		$http.put("/api/customers/" + $scope.customer._id, $scope.customer).then(function(response){
-//    			$scope.customer = response.data;
-//    		});
+//    	else {
+//    		$scope.appointment = {};
 //    	}
-//    	
-//    	$scope.isNew = function() {
-//    		return $scope.customer === undefined || $scope.customer._id === undefined;
-//    	}
+      	
+      	
+      	
 	    	
 	    // Para regresar a la vista anterior
         $scope.doTheBack = function() {

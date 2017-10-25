@@ -12,7 +12,8 @@ angular.module('appointmentsDayModule', [])
         	}
         	
         	$scope.day = day;
-        	$scope.dia = moment(day).format('dddd DD MMMM YYYY'); 
+        	$scope.dia = moment(day).format('dddd DD MMMM YYYY');
+        	$scope.dayD = moment(day).format('YYYYMMDD'); 
         	$scope.timetable = [];
         	
         	var fromDate = day.format("YYYYMMDD");

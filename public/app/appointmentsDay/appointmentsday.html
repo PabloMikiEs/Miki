@@ -25,7 +25,7 @@
 								<td>{{x.appoints.status}}</td> 
 								<td>
 									<a href="/appointmentdetail/{{x.appoints._id}}" ng-show="x.appoints._id" ><button class="btn"><i class="pe-7s-right-arrow" aria-hidden="true"></i> Ver cita</button> </a>
-									<a href="/appointmentdetail/add" ng-show="!x.appoints._id" ><button class="btn"><i class="pe-7s-right-arrow" aria-hidden="true"></i> Añadir cita</button> </a>
+									<a href="/appointmentdetail/add/{{dayD + x.hour}}" ng-show="!x.appoints._id" ><button class="btn"><i class="pe-7s-right-arrow" aria-hidden="true"></i> Añadir cita</button> </a>
 								</td>
 							</tr>
 		               </tbody>
