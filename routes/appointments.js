@@ -6,7 +6,6 @@ const Pet = require('../models/pet');
 var moment = require('moment');
 
 
-
 router.get('/appointments',(req, res)=> { 
 	Appointment.find({}, (err, Appointment)=> {
 	res.json(Appointment); 
@@ -14,11 +13,18 @@ router.get('/appointments',(req, res)=> {
 });
 
 router.get('/appointments/:id',(req, res)=> {
-	Appointment.findById({_id:req.params.id}, (err, Appointment)=> {
-		res.json(Appointment);
+	Appointment.findById({_id:req.params.id}, (err, Appointments)=> {
+		res.json(Appointments);
+	}).populate({
+		path: 'petID', 
+		model: 'Pet',
+		populate: 
+			{ 	
+				path: 'ownerId', 
+				model: 'Customer'
+			}
 	});
 });
-
 
 router.get('/appointments/:fromdate/:todate',(req, res)=> {
     var fechaInicio = moment(req.params.fromdate,'YYYYMMDD');
@@ -27,7 +33,7 @@ router.get('/appointments/:fromdate/:todate',(req, res)=> {
     Appointment.find({ "dateHourStart": { $gte:fechaInicio, $lt:fechaFin } }, (err, appointments)=> {
 		if (err) {
 			console.error(err);
-			return res.sendStatus(500);//KO (TODO: elegir un codigo mas explicito)
+			return res.sendStatus(500); 
 		}
 		
         var appointmentsByDate = appointments.reduce(function(appointmentsByDate, item){
@@ -43,7 +49,6 @@ router.get('/appointments/:fromdate/:todate',(req, res)=> {
             return appointmentsByDate;
         }, {});
 		
-		
         res.json(appointmentsByDate);
 
 	}).populate({
@@ -58,26 +63,6 @@ router.get('/appointments/:fromdate/:todate',(req, res)=> {
     ).sort({'dateTimeStart': 1})	
 	
 });
-
-//router.get('/appointments/:month', (req, res) => {
-//	var fechaInicio = moment(req.params.month,'YYYYMM'); 
-//	
-//	Appointment.find({"dateHourStart": fechaInicio}, (err, appointments)=> {
-//        if (err) {
-//            res.json({ success: false, message: err });
-//        } else {
-//        	Appointment.populate(appointments, { path: 'petID', select: 'name specie', populate: { path: 'ownerId' , select: 'firstName' }}, function (err,appointments) {
-//        		if (err) {
-//        			console.error(err);
-//        		} else {
-//        			res.json(appointments);
-//        		}
-//        	}); 
-//        }
-//	});
-//
-//});
-
 
 module.exports = router;
 

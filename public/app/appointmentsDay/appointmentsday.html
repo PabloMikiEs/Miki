@@ -12,7 +12,8 @@
 		               		<th>hora</th>
 		               		<th>Especie</th>
 		               		<th>mascota</th>
-		               		<th>dueño</th> 
+		               		<th>dueño</th>
+		               		<th>Estado</th>  
 		               		<th></th> 
 		               </thead>
 		               <tbody>
@@ -21,9 +22,10 @@
 								<td>{{x.appoints.petID.specie}}</td> 
 								<td>{{x.appoints.petID.name}}</td>
 								<td>{{x.appoints.petID.ownerId.firstName}}</td> 
+								<td>{{x.appoints.status}}</td> 
 								<td>
 									<a href="/appointmentdetail/{{x.appoints._id}}" ng-show="x.appoints._id" ><button class="btn"><i class="pe-7s-right-arrow" aria-hidden="true"></i> Ver cita</button> </a>
-									<a href="/appointmentdetail/{{x.appoints._id}}" ng-show="!x.appoints._id" ><button class="btn"><i class="pe-7s-right-arrow" aria-hidden="true"></i> Añadir cita</button> </a>
+									<a href="/appointmentdetail/add" ng-show="!x.appoints._id" ><button class="btn"><i class="pe-7s-right-arrow" aria-hidden="true"></i> Añadir cita</button> </a>
 								</td>
 							</tr>
 		               </tbody>

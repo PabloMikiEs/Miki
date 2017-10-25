@@ -36,7 +36,7 @@ router.put('/pets/:id', (req, res, next) => {
 			return res.send(err);
 		}
 
-		// rellenamos los datos que vienen en la peticion
+		// rellenamos los datos que vienen en la petición
 		for(prop in req.body){
 			pets[prop] = req.body[prop];
 		}

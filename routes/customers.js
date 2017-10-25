@@ -35,17 +35,6 @@ router.get('/customers/:id/pets', function(req, res) {
 
 router.post('/customers', (req, res) => {
 	   var customer = new Customer(req.body);
-	  // como pasamos el req.body por Customer no hace falta rellenar esto
-	   /*customer.dni = req.body.dni;
-	   customer.firstName = req.body.firstName;
-	   customer.lastName = req.body.lastName;
-	   customer.phone = req.body.phone;
-	   customer.mail = req.body.mail;
-	   customer.note = req.body.note;*/
-	   
-	   /*console.log("DNI", req.body.dni)
-	   console.log("Customer", customer);*/
-	   
 	   customer.save((err) => {
 			if (err) {
 				console.error(err);
@@ -69,11 +58,6 @@ router.put('/customers/:id', (req, res, next) => {
 		
 		console.log("Actualizando customer", customer);
 		
-//		const validationErrors = Validators.validateCustomer(customer);
-//		if(validationErrors) {
-//			return res.status(400).send(validationErrors);
-//		}
-
 		// save
 		customer.save(function(err) {
 			if (err) {

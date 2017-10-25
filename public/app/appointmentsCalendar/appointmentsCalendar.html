@@ -36,7 +36,7 @@
 									<tr ng-repeat="days in dates">
 										<td ng-repeat="day in days" class="tdcalendar"> 
 						            		<b>{{ day.date }}</b><br> 
-						                	<a href="/appointment/day/{{actual | date:'yyyyMM'}}{{day.date}}"><div class="col-centered">{{day.contador}}</div></a>
+						                	<a href="/appointment/day/{{actual | date:'yyyyMM'}}{{day.date}}"><div class="col-centered">{{day.contador}} citas</div></a>
 						        		</td>
 						     		</tr>
 					        	</tbody>
