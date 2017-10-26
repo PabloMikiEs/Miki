@@ -22,10 +22,15 @@
 								<td>{{x.appoints.petID.specie}}</td> 
 								<td>{{x.appoints.petID.name}}</td>
 								<td>{{x.appoints.petID.ownerId.firstName}}</td> 
-								<td>{{x.appoints.status}}</td> 
 								<td>
-									<a href="/appointmentdetail/{{x.appoints._id}}" ng-show="x.appoints._id" ><button class="btn"><i class="pe-7s-right-arrow" aria-hidden="true"></i> Ver cita</button> </a>
-									<a href="/appointmentdetail/add/{{dayD + x.hour}}" ng-show="!x.appoints._id" ><button class="btn"><i class="pe-7s-right-arrow" aria-hidden="true"></i> Añadir cita</button> </a>
+									<div class="status red" ng-if="'-1' === x.appoints.status">Cancelado</div>
+									<div ng-if="'0' === x.appoints.status">Pendiente</div>
+									<div  class="orange" ng-if="'1' === x.appoints.status">En curso</div> 
+									<div  class="green" ng-if="'2' === x.appoints.status">Completado</div>
+								</td> 
+								<td>
+									<a href="/appointmentdetail/{{x.appoints._id}}" ng-show="x.appoints._id"><i class="pe-7s-look icon-big"></i></a>
+									<a href="/appointmentdetail/add/{{dayD + x.hour}}" ng-show="!x.appoints._id" ><i class="pe-7s-plus icon-big"></i></a>
 								</td>
 							</tr>
 		               </tbody>
