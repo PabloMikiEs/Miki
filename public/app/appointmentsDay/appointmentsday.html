@@ -4,19 +4,19 @@
          <div class="col-md-12">
 			<div class="card">
 		       	<div class="header">
-		           <h4 class="title">CITAS DEL {{dia}}</h4> 
+		           <h3 class="title centrar">CITAS DEL {{dia}}</h3> 
 		       	</div>
 		       	<div class="content table-responsive table-full-width">
 		           	<table class="table table-hover table-striped">
 						<thead> 
-		               		<th>hora</th>
-		               		<th>Especie</th>
-		               		<th>mascota</th>
-		               		<th>dueño</th>
-		               		<th>Estado</th>  
+		               		<th class="title centrar">hora</th>
+		               		<th class="title centrar">Especie</th>
+		               		<th class="title centrar">mascota</th>
+		               		<th class="title centrar">dueño</th>
+		               		<th class="title centrar">Estado</th>  
 		               		<th></th> 
 		               </thead>
-		               <tbody>
+		               <tbody class="centrar">
 							<tr ng-repeat="x in timetable">
 								<td>{{x.hour}}</td> 
 								<td>{{x.appoints.petID.specie}}</td> 
@@ -35,5 +35,5 @@
 		   </div>
 		 </div> 
 		<div class="col-md-12">
-			<button class="btn btn-info  pull-right" ng-click="doTheBack()">><i class="pe-7s-back"></i></button>
+			<button class="btn btn-info  pull-right" ng-click="doTheBack()"><i class="pe-7s-back"></i></button>
 		</div>   

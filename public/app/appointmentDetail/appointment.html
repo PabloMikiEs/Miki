@@ -4,41 +4,31 @@
              <div class="col-md-12">
                  <div class="card">
                      <div class="header">
-                         <h4 class="title">Cita {{appointment._id}}</h4>
+                         <h3 class="title centrar">Cita: {{appointment.dateHourStart | date :  "H:mm" }} del día {{appointment.dateHourStart | date :  "dd/MM/y" }}</h3>
                      </div>
                      <div class="content">
-						<div class="row">
-							<div class="col-md-12">
 								<div class="row">
 			                    	<div class="col-md-12">
-			                          	<div class="col-md-6">
+			                          	
+			                          	<div class="col-md-12">
 			                          		<div class="form-group">
 			                            		<label>Nombre mascota</label>
-			                               		<input type="text" class="form-control" type="text" name="name" ng-model="appointment.petID.name" placeholder="name pet">
-			                           	 	</div>
+			                               		<select class="form-control" ng-model="appointment.petID" ng-options="pet._id as pet.name for pet in pets">
+									    			<option value="">{{appointment.petID.name}}</option>
+												 </select>
+											</div>
 			                           	</div>
-			                           	<div class="col-md-6">
-			                          		<div class="form-group">
-			                            		<label>Dueño</label>
-			                               		<input type="text" class="form-control" type="text" name="firstName" ng-model="appointment.petID.ownerId.firstName" placeholder="Nombre propietario">
-			                           	 	</div>
-			                           	</div>
-			                      		<div class="col-md-6">
-			                            	<div class="form-group">
-				                         		<label>Día</label>
-				                                 <input type="text" class="form-control" type="text" name="day" ng-model="appointment.dateHourStart" datetime="yyyy-MM-dd" placeholder="day">
-				                               </div>
-			                        	</div>
-				                     	 <div class="col-md-6">
-				                            <div class="form-group">
-				                         		<label>Hora</label>
-				                                 <input type="text" class="form-control" type="text" name="hora" ng-model="appointment.dateHourStart" placeholder="hora">
-				                               </div>
-				                        </div>
-				                        <div class="col-md-6">
+				      
+				                        <div class="col-md-12">
 				                            <div class="form-group">
 				                         		<label>Status</label>
-				                                 <input type="text" class="form-control" type="text" name="status" ng-model="appointment.status" placeholder="Estado">
+				                         		<select class="form-control" ng-model="appointment.status">
+									    			<option value="-1">Cancelado</option>
+									    			<option value="0">Pendiente</option>
+									    			<option value="1">En curso</option>
+									    			<option value="2">Completado </option>
+												 </select>
+<!-- 				                                 <input type="text" class="form-control" type="text" name="status" ng-model="appointment.status" placeholder="Estado"> -->
 				                        	</div>
 				                        </div>
 			                      	</div> 	
@@ -58,5 +48,7 @@
              </div>
              
 			 <div class="col-md-12">
-			 	<button class="btn btn-info  pull-right"><a href="/"><i class="pe-7s-back"></i></a></button>
-			 </div>             
+			 	<button class="btn btn-info  pull-right" ng-click="doTheBack()"><i class="pe-7s-back"></i></a></button>
+			 </div>        
+ 
+	</div> 		     

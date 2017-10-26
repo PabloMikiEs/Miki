@@ -2771,5 +2771,8 @@ th {
 }
 .calendario{
 	margin-top:20px;
-}   
+}  
+.centrar{
+      text-align: center;
+} 
     

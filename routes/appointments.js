@@ -13,8 +13,8 @@ router.get('/appointments',(req, res)=> {
 });
 
 router.get('/appointments/:id',(req, res)=> {
-	Appointment.findById({_id:req.params.id}, (err, Appointments)=> {
-		res.json(Appointments);
+	Appointment.findById({_id:req.params.id}, (err, appointments)=> {
+		res.json(appointments);
 	}).populate({
 		path: 'petID', 
 		model: 'Pet',
@@ -38,7 +38,7 @@ router.get('/appointments/:fromdate/:todate',(req, res)=> {
 		
         var appointmentsByDate = appointments.reduce(function(appointmentsByDate, item){
             var date = moment(item.dateHourStart).format('YYYYMMDD');
-            var time = moment(item.dateHourStart).format('hh:mm');
+            var time = moment(item.dateHourStart).format('HH:mm');
             if(appointmentsByDate[date] == undefined) {
             	appointmentsByDate[date] = {};
             }
@@ -64,6 +64,54 @@ router.get('/appointments/:fromdate/:todate',(req, res)=> {
 	
 });
 
+router.put('/appointments/:id', (req, res, next) => {
+	Appointment.findOne({_id : req.params.id }, function(err, appointment) {
+		if (err) {
+			return res.send(err);
+		}
+
+		// rellenamos los datos que vienen en la peticion
+		for(prop in req.body){
+			appointment[prop] = req.body[prop];
+		}
+		
+		console.log("Actualizando appointment", appointment);
+		
+		// save
+		appointment.save(function(err) {
+			if (err) {
+				console.error(err);
+				res.sendStatus(500);
+			} else {
+				res.json(appointment);
+			}
+		});
+	});
+});
+
+router.post('/appointments', (req, res) => {
+	   var appointment = new Appointment(req.body);
+	   appointment.save((err) => {
+			if (err) {
+				console.error(err);
+				res.status(500).send(err);//KO
+			} else {
+				res.json(appointment);
+			}
+		}) ;   
+});
+
+router.delete('/appointments/:id',function(req, res) {
+	console.log("/appointments/" + req.params.id); 
+	Appointment.findByIdAndRemove(req.params.id, function(err, pets) {
+		if (err) {
+			console.error(err);
+			res.sendStatus(500); 
+		} else {
+			res.sendStatus(200);
+		}
+	});
+});
 module.exports = router;
 
 

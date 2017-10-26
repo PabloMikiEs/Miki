@@ -8,7 +8,7 @@ angular.module('appointmentsDayModule', [])
         	
         	var day = moment().startOf('day');
         	if ($routeParams.day) {
-        		day = moment($routeParams.day,"YYYYMMDD");
+        		day = moment.utc($routeParams.day,"YYYYMMDD");
         	}
         	
         	$scope.day = day;
@@ -39,7 +39,7 @@ angular.module('appointmentsDayModule', [])
           	});	
         	
         	
-        	// Para regresar a la vista anterior
+         
         	$scope.doTheBack = function() {
         		  window.history.back();
         		};
