@@ -1,52 +1,54 @@
 <div class="content">
      <div class="container-fluid">
          <div class="row">
-         <div class="col-md-12">
-			<div class="card">
-		       	<div class="header">
-		           <h4 class="title">CITAS DOOGIE VET</h4>
-		           <p class="category">Lista total de citas</p>
-		       	</div>
- 	           	 
-				<section class="content nav">
-						<div class="row col-md-12">
-                                <div class="col-md-2 col-md-offset-3">
-                                    <a href="appointments/{{previus}}"><button class="btn btn-default btn-block btn-green"><i class="pe-7s-angle-left"></i></button></a>
-                                </div>
-                                <div class="col-md-2">
-                                    <button class="btn btn-default btn-block btn-green" >{{actual | date:'MMMM yyyy'}}</button>
-                                </div>
-                                <div class="col-md-2">
-                                    <a href="appointments/{{next}}"><button class="btn btn-default btn-block btn-green"><i class="pe-7s-angle-right"></i></button></a>
-                                </div>
-                 		</div>
-  
-						<div class="row">		
-							<table class="calendario col-md-8 col-md-offset-2"> 
-								<thead> 
-							       <th>Lunes</th>
-							       <th>Martes</th>
-							       <th>Miercoles</th>
-							       <th>Jueves</th>
-							       <th>Viernes</th>
-							       <th>Sábado</th>
-							       <th>Domingo</th>
-                				</thead>
-					        	<tbody>
-									<tr ng-repeat="days in dates">
-										<td ng-repeat="day in days" class="tdcalendar"> 
-						            		<b>{{ day.date }}</b><br> 
-						                	<a href="/appointment/day/{{actual | date:'yyyyMM'}}{{day.date}}"><div class="col-centered">{{day.contador}} citas</div></a>
-						        		</td>
-						     		</tr>
-					        	</tbody>
-							</table>
-						</div>
-				</section>
-				 
-	 
-		   </div>
-		    </div> 
+	         <div class="col-md-12">
+				<div class="card">
+			       	<div class="header">
+			           <h4 class="title">CITAS DOOGIE VET</h4>
+			           <p class="category">Lista total de citas</p>
+			       	</div>
+	 	           	 
+					<section class="content nav">
+							<div class="row col-md-12">
+	                                <div class="col-md-2 col-md-offset-3">
+	                                    <a href="appointments/{{previus}}"><button class="btn btn-default btn-block btn-green"><i class="pe-7s-angle-left"></i></button></a>
+	                                </div>
+	                                <div class="col-md-2">
+	                                    <button class="btn btn-default btn-block btn-green" >{{actual | date:'MMMM yyyy'}}</button>
+	                                </div>
+	                                <div class="col-md-2">
+	                                    <a href="appointments/{{next}}"><button class="btn btn-default btn-block btn-green"><i class="pe-7s-angle-right"></i></button></a>
+	                                </div>
+	                 		</div>
+	  
+							<div class="row">		
+								<table class="calendario col-md-8 col-md-offset-2"> 
+									<thead> 
+								       <th>Lunes</th>
+								       <th>Martes</th>
+								       <th>Miercoles</th>
+								       <th>Jueves</th>
+								       <th>Viernes</th>
+								       <th>Sábado</th>
+								       <th>Domingo</th>
+	                				</thead>
+						        	<tbody>
+										<tr ng-repeat="days in dates">
+											<td ng-repeat="day in days"class="tdcalendar"> 
+							            		<b>{{ day.date }}</b><br> 
+							                	<a href="/appointment/day/{{actual | date:'yyyyMM'}}{{day.date}}"><div class="col-centered">{{day.contador}} <span ng-if="day.date">citas</span></div></a>
+							        		</td>
+							     		</tr>
+						        	</tbody>
+								</table>
+							</div>
+					</section>
+					
+			   	</div>
+			</div>
+		</div> 
 		<div class="col-md-12">
 			<button class="btn btn-info  pull-right" ng-click="doTheBack()"><i class="pe-7s-back"></i></button>
-		</div>   
+		</div> 
+	</div> 
+</div>   

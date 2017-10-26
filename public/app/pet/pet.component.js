@@ -23,6 +23,11 @@ angular.module('petModule', ["ngRoute"])
 
     	$scope.submit = function() {
     		console.log("Insert pet:", $scope.pet);
+    		const validationErrors = Validators.validatePet($scope.pet);
+    		if(validationErrors) {
+    			return alert(JSON.stringify(validationErrors));
+    		}  
+    		
     		$http.post("/api/pets", $scope.pet).then(function(response){
     			$scope.pet = response.data;
     			alert("Mascota añadida");

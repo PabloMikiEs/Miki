@@ -14,40 +14,22 @@
 	                             <div class="row">
 	                                 <div class="col-md-6">
 	                                     <div class="form-group">
-	                                         <label>Id usuario</label>
+	                                         <label></label>
 	                                         <input type="text" class="form-control" disabled placeholder="Id" value="{{customer._id}}">
 	                                     </div>
 	                                 </div>
-	                                 <div class="col-md-6">
-	                                     <div class="form-group">
-	                                         <label>DNI</label>
-	                                         <input type="text" class="form-control" type="text" name="dni" ng-model="customer.dni" placeholder="dni">
-	                                     </div>
-	                                 </div>
+	                                 <customer-form data-label="DNI" data-model="customer.dni" data-name="dni" data-placeholder="dni" />
 	                             </div>
+	                              
 
 	                             <div class="row">
-	                                 <div class="col-md-6">
-	                                 	<label-input-form-group data-label="Nombre" data-model="customer.firstName" data-placeholder="firstName" />
-	                                 </div>
-	                                 <div class="col-md-6"> 
-		                                 <label-input-form-group data-label="Apellidos" data-model="customer.lastName" data-placeholder="lastName" />
-	                                 </div>
+	                             	<customer-form data-label="Nombre" data-model="customer.firstName" data-name="firstName" data-placeholder="firstName" />
+	                                <customer-form data-label="Apellidos" data-model="customer.lastName" data-name="lastName" data-placeholder="lastName" />
 	                             </div>
 
 								<div class="row">
-	                                 <div class="col-md-6">
-	                                     <div class="form-group">
-	                                         <label>Teléfono</label>
-	                                         <input type="text" class="form-control" name="phone" ng-model="customer.phone" placeholder="phone">
-	                                     </div>
-	                                 </div>
-	                                 <div class="col-md-6">
-	                                     <div class="form-group">
-	                                         <label>Email</label>
-	                                         <input type="text" class="form-control"  name="email" ng-model="customer.email" placeholder="email">
-	                                     </div>
-	                                 </div>
+									<customer-form data-label="Teléfono" data-model="customer.phone" data-name="phone" data-placeholder="phone" />
+									<customer-form data-label="Email" data-model="customer.email" data-name="email" data-placeholder="email" />
 	                             </div>
 
                              <div class="row">
@@ -59,10 +41,10 @@
                                  </div>
                              </div>
 							<div class="row">
-                                 <div class="col-md-12">
-										<input type="button" class="btn btn-info btn-fill pull-right" ng-click="submit()" ng-show="!customer._id" value="Save"/>
-										<input type="button" class="btn btn-info btn-fill pull-right" ng-click="edit()" ng-show="customer._id" value="Update"/>
-										<!-- <input type="button" class="btn btn-info btn-fill pull-right" ng-click="cancel()" value="Cancel"/> -->
+								<div class="col-md-12">
+									<input type="button" class="btn btn-info btn-fill pull-right" ng-click="submit()" ng-show="!customer._id" value="Save"/>
+									<input type="button" class="btn btn-info btn-fill pull-right" ng-click="edit()" ng-show="customer._id" value="Update"/>
+<!-- 									<button-customer data-click="submit()" data-show="!customer._id" data-value="Save"/> -->
                                  </div>
                              </div> 
                              <div class="clearfix"></div>
@@ -91,19 +73,19 @@
 			                <tbody>
 			                	<div >
 			                     <tr data-ng-repeat="pet in customerPets">
-			                     	<td><img src="{{pet.photoUrl}}" alt="foto2" class="foto"></td>
+			                     	<td><img src="{{pet.photoUrl}}" alt="<i class='pe-7s-camera'></i>" class="foto"></td>
 			                     	<td>{{pet._id}}</td>
 			                     	<td>{{pet.name}}</td>
 			                     	<td>{{pet.specie}}</td>
 			                     	<td>{{pet.chipNumber}}</td>
-			                     	<td><a href="/pets/{{pet._id}}"><button class="btn"><i class="pe-7s-right-arrow" aria-hidden="true"></i> Ver mascota</button> </a></td>
+			                     	<td><a href="/pets/{{pet._id}}"><i class="pe-7s-look icon-big"></a></td>
 			                     </tr>
 			                   </div>
 			                </tbody>
 			                
 			            </table>
 			        </div>
-			        <div><button class="btn-round btn btn-info pull-center"><a href="/customers/{{customer._id}}/pets/add/"><i class="pe-7s-add-user" aria-hidden="true"></i>Añadir mascotas</a></button></div>
+			        <div><button class="btn-round btn btn-info pull-center"><a href="/customers/{{customer._id}}/pets/add/"><i class="pe-7s-add-user"></i>Añadir mascotas</a></button></div>
     
 			    </div>
 			  </div> 

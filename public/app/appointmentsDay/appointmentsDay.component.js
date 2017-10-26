@@ -25,6 +25,8 @@ angular.module('appointmentsDayModule', [])
         		//$scope.appoint = res.data ? res.data[fromDate] : {};
         		$scope.appoint = res.data[fromDate] || {};
             	
+        		
+        		
                 var open = moment(day).hour(9);
                 var close = moment(day).hour(21);
                 for(var hour = moment(open); hour.isBefore(close); hour.add(0.5, 'h')) {

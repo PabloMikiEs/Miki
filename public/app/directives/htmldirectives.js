@@ -2,7 +2,7 @@
 
 angular.module('htmlDirectivesModule', [])
 	.directive(
-			'labelInputFormGroup',
+			'customerForm',
 			function() {
 				return {
 					restrict : 'E',
@@ -13,23 +13,23 @@ angular.module('htmlDirectivesModule', [])
 						name: '@',
 						placeholder: '@',
 					},
-					template : 	'<div class="form-group"> \
+					template : 	'<div class="col-md-6">\
+									<div class="form-group"> \
 								      <label>{{label}}</label>\
 								      <input type="text" class="form-control" name="{{name}}" placeholder={{placeholder}} ng-model="model">\
+									</div>\
 								</div>'					
 				}
 			})
-	.directive('formGroupWrapper', function() {
+	.directive('buttonCustomer', function() {
 		return {
 			restrict : 'E',
 			replace : true,
-			transclude : true,
 			scope: {
-				label: '@',
+				click: '=',
+				show: '=',
+				value: '@',
 			},			
-			template : '<div class="form-group"> \
-						    <label>{{label}}</label>\
-							<div ng-transclude></div>\
-						</div>'
-		};
+			template : '<input type="button" class="btn btn-info btn-fill pull-right" ng-click="click" ng-show="show" value=={{value}}>'
+		}
 	})
