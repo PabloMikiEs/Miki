@@ -28,16 +28,10 @@
 
 	                             <div class="row">
 	                                 <div class="col-md-6">
-	                                     <div class="form-group">
-	                                         <label>Nombre</label>
-	                                         <input type="text" class="form-control" name="firstName" ng-model="customer.firstName" placeholder="firstName">
-	                                     </div>
+	                                 	<label-input-form-group data-label="Nombre" data-model="customer.firstName" data-placeholder="firstName" />
 	                                 </div>
-	                                 <div class="col-md-6">
-	                                     <div class="form-group">
-	                                         <label>Apellidos</label>
-	                                         <input type="text" class="form-control" name="lastName" ng-model="customer.lastName" placeholder="lastName">
-	                                     </div>
+	                                 <div class="col-md-6"> 
+		                                 <label-input-form-group data-label="Apellidos" data-model="customer.lastName" data-placeholder="lastName" />
 	                                 </div>
 	                             </div>
 
@@ -114,10 +108,10 @@
 			    </div>
 			  </div> 
 			 <div class="col-md-12">
-			 	<button class="btn btn-info  pull-right"><a href="/"><i class="pe-7s-back"></i></a></button>
+			 	<button class="btn btn-info pull-right" ng-click="doTheBack()"><i class="pe-7s-back"></i></a></button>
 			 </div>             
-             
-             
+      </div>         
+  </div>             
              
              
              

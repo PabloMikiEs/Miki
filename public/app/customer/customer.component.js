@@ -43,6 +43,13 @@ angular.module('customerModule', ["ngRoute"])
     	$scope.isNew = function() {
     		return $scope.customer === undefined || $scope.customer._id === undefined;
     	}
+    	
+    	$scope.doTheBack = function() {
+  		  window.history.back();
+  		};
+
+  		
+  		
     });
 
     
