@@ -345,31 +345,9 @@ body > .navbar-collapse {
 .btn-info a{
 	color: #FFFFFF; 
 }
-<<<<<<< HEAD
-<<<<<<< Upstream, based on branch 'master' of https://github.com/Curso-Fullstack-MEAN-Octubre2017/miki
-.btn-info:hover{ 
-    background-color: #fff;
-=======
-.btn-info a{
-	color: #FFFFFF; 
-}
-.btn-info:hover{ 
-    background-color: #fff;
-}
-.btn-info:hover a{
-	color: #009688; 
->>>>>>> 721c345 Tarea: #15: Probar directivas
-=======
-.btn-info:hover{ 
-    background-color: #fff;
->>>>>>> branch 'master' of https://github.com/Curso-Fullstack-MEAN-Octubre2017/miki
-}
 .btn-info:hover a{
 	color: #009688; 
 } 
-.btn-info:hover{ 
-    background-color: #fff; 
-}
  .btn-info:hover i{
  	color: #009688; 
 	font-size: x-large;
