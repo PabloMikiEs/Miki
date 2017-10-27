@@ -25,12 +25,21 @@
 								<td>
 									<div class="status red" ng-if="'-1' === x.appoints.status">Cancelado</div>
 									<div ng-if="'0' === x.appoints.status">Pendiente</div>
+<<<<<<< HEAD
 									<div class="orange" ng-if="'1' === x.appoints.status">En curso</div> 
 									<div class="green" ng-if="'2' === x.appoints.status">Completado</div>
 								</td> 
 								<td>
 									<a href="/appointmentdetail/{{x.appoints._id}}" ng-show="x.appoints._id"><i class="pe-7s-look icon-big green"></i></a>
 									<a href="/appointmentdetail/add/{{dayD + x.hour}}" ng-show="!x.appoints._id" ><i class="pe-7s-plus icon-big grey"></i></a>
+=======
+									<div  class="orange" ng-if="'1' === x.appoints.status">En curso</div> 
+									<div  class="green" ng-if="'2' === x.appoints.status">Completado</div>
+								</td> 
+								<td>
+									<a href="/appointmentdetail/{{x.appoints._id}}" ng-show="x.appoints._id"><i class="pe-7s-look icon-big"></i></a>
+									<a href="/appointmentdetail/add/{{dayD + x.hour}}" ng-show="!x.appoints._id" ><i class="pe-7s-plus icon-big"></i></a>
+>>>>>>> branch 'master' of https://github.com/Curso-Fullstack-MEAN-Octubre2017/miki
 								</td>
 							</tr>
 		               </tbody>

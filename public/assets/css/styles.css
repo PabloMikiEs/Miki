@@ -345,8 +345,24 @@ body > .navbar-collapse {
 .btn-info a{
 	color: #FFFFFF; 
 }
+<<<<<<< HEAD
+<<<<<<< Upstream, based on branch 'master' of https://github.com/Curso-Fullstack-MEAN-Octubre2017/miki
 .btn-info:hover{ 
     background-color: #fff;
+=======
+.btn-info a{
+	color: #FFFFFF; 
+}
+.btn-info:hover{ 
+    background-color: #fff;
+}
+.btn-info:hover a{
+	color: #009688; 
+>>>>>>> 721c345 Tarea: #15: Probar directivas
+=======
+.btn-info:hover{ 
+    background-color: #fff;
+>>>>>>> branch 'master' of https://github.com/Curso-Fullstack-MEAN-Octubre2017/miki
 }
 .btn-info:hover a{
 	color: #009688; 
@@ -788,12 +804,30 @@ th {
 .btn-green a{ 
     text-align:center; 
     font-size: 20px; 
+    font-size: 1.1em; 
+}
+.btn-green a{ 
+    text-align:center; 
+    font-size: 20px; 
 }
 .calendario{
 	margin-top:20px;
 }  
 .centrar{
       text-align: center;
+} 
+.green {
+	color: #009688;
+}
+.red {
+	color: red;
+}
+.orange{
+	color:orange;
+}
+.icon-big{
+	   font-size: x-large;
+	   color: #009688;
 } 
 .green {
 	color: #009688!important;
