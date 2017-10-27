@@ -5,9 +5,9 @@ angular.module('petsServices', [])
 
         console.log('Servicio Pets');
 
-        var self = {};
+        var service  = {};
 
-        self.getPetsByOwnerId = (id) => {
+        service.getPetsByOwnerId = (id) => {
             var q = $q.defer();
             $http.get('api/customers/' + id + '/pets')
                 .success(function (res) {
@@ -18,7 +18,7 @@ angular.module('petsServices', [])
             return q.promise;
         };
 
-        self.getPetById = (id) => {
+        service.getPetById = (id) => {
             var q = $q.defer();
 
             $http.get('api/pet/' + id)
@@ -30,7 +30,7 @@ angular.module('petsServices', [])
             return q.promise;
         };
 
-        self.deletePet = (id) => {
+        service.deletePet = (id) => {
             var q = $q.defer();
             $http.delete('api/pet/' + id, {params: {_id: id}})
                 .success(function (res) {
@@ -41,7 +41,7 @@ angular.module('petsServices', [])
             return q.promise;
         };
 
-        self.postPet = (obj) => {
+        service.postPet = (obj) => {
             var q = $q.defer();
 
             $http.post("api/pet", JSON.stringify(obj)).success(function (res) {
@@ -52,7 +52,7 @@ angular.module('petsServices', [])
             return q.promise;
         };
 
-        self.putPet = (obj) => {
+        service.putPet = (obj) => {
             var q = $q.defer();
             $http.put("api/pet/" + obj._id, JSON.stringify(obj)).success(function (res) {
                 q.resolve(res);
@@ -62,5 +62,5 @@ angular.module('petsServices', [])
             return q.promise;
         };
 
-        return self;
+        return service ;
     }]);

@@ -8,7 +8,7 @@ angular.module('customerModule', ["ngRoute"])
         }
 
     })
-    .controller('CustomerController',function($scope, $http, $location, $routeParams){
+    .controller('CustomerController',function($scope, $http, $location, $routeParams, customersService){
     	
     	console.log("inicializando el CustomerDetailsController...");
     	
