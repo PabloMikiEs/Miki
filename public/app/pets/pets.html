@@ -8,15 +8,15 @@
            <table class="table table-hover table-striped">
                <thead>
                	<th> </th> 
-                <th>ID</th>
-               	<th>Nombre</th>
-               	<th>Especie</th>
-               	<th>Nª chip</th> 
+                <th class="title centrar">ID</th>
+               	<th class="title centrar">Nombre</th>
+               	<th class="title centrar">Especie</th>
+               	<th class="title centrar">Nª chip</th> 
                	<th> </th> 
                </thead>
                <tbody>
                	<div >
-                    <tr data-ng-repeat="pet in pets">
+                    <tr data-ng-repeat="pet in pets" class="centrar">
                     	<td><img src="{{pet.photoUrl}}" alt="<i class='pe-7s-camera'></i>" class="foto"></td>
                     	<td>{{pet._id}}</td>
                     	<td>{{pet.name}}</td>

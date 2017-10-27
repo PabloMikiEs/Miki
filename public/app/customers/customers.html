@@ -1,4 +1,4 @@
-<div class="col-md-12">
+<div class="col-md-12" ng-controller="ClientsController">
     <div class="card">
         <div class="header">
             <h4 class="title">CLIENTES DOOGIE VET</h4>
@@ -6,17 +6,17 @@
         </div>
         <div class="content table-responsive table-full-width">
             <table class="table table-hover table-striped">
-                <thead>
-                	<th> </th> 
-                    <th>ID</th>
-                	<th>Nombre completo</th>
-                	<th>Telefono</th>
-                	<th>Email</th> 
+                <thead class="title centrar">
+                	<th > </th> 
+                    <th class="title centrar">ID</th>
+                	<th class="title centrar">Nombre completo</th>
+                	<th class="title centrar">Telefono</th>
+                	<th class="title centrar">Email</th> 
                 	<th> </th> 
                 </thead>
                 <tbody>
                 	<div >
-                     <tr data-ng-repeat="x in clients">
+                     <tr data-ng-repeat="x in clients" class="centrar">
                      	<td><i class="pe-7s-users"></i></td>
                      	<td>{{x._id}}</td>
                      	<td>{{x.firstName}} {{x.lastName}}</td>

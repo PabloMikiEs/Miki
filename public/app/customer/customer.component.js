@@ -13,15 +13,16 @@ angular.module('customerModule', ["ngRoute"])
     	console.log("inicializando el CustomerDetailsController...");
     	
     	if(isNaN(+$routeParams.id)) {
-	    	$http.get("/api/customers/" + $routeParams.id).then(function(response) {
-	    		console.log("Response /api/customers/" + $routeParams.id, response);
-	    		$scope.customer = response.data;
-	    	});
-	    	$http.get("/api/customers/" + $routeParams.id + "/pets").then(function(response) {
-	    		console.log("Response /api/customers/" + $routeParams.id + "/pets", response);
-	    		$scope.customerPets = response.data;
-	    	});	    	
-    	} else {
+    		$scope.customer = customersService.get({id: id});
+//	    	$http.get("/api/customers/" + $routeParams.id).then(function(response) {
+//	    		console.log("Response /api/customers/" + $routeParams.id, response);
+//	    		$scope.customer = response.data;
+//	    	});
+    		//customerResource.getPetsForCustomer
+//	    	$http.get("/api/customers/" + $routeParams.id + "/pets").then(function(response) {
+//	    		console.log("Response /api/customers/" + $routeParams.id + "/pets", response);
+//	    		$scope.customerPets = response.data;
+	    	}else {
     		$scope.customer = {};
     		$scope.customerPets = []
     	}
