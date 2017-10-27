@@ -28,6 +28,12 @@ angular.module('customerModule', ["ngRoute"])
 
     	$scope.submit = function() {
     		console.log("Insert customer:", $scope.customer);
+    		
+    		const validationErrors = Validations.valCust($scope.customer);
+    		if(validationErrors) {
+    			return alert(JSON.stringify(validationErrors));
+    		} 
+    		
     		$http.post("/api/customers", $scope.customer).then(function(response){
     			$scope.customer = response.data;
     		});

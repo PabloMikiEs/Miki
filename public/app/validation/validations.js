@@ -1,4 +1,4 @@
-if (typeof validate !== "function") { // estamos en el servidor
+if (typeof validate !== "function") {  
 	validate = require("validate.js");
 }
 /**
@@ -13,11 +13,70 @@ const Validations= {
 					minimum : 4, 
 					message : "debe tener entre 4 y 18 caracteres"
 				}
-			}
+			},
+			specie : {
+				presence : true,
+				length : {
+					minimum : 4,
+					maximum: 15,
+					message : "debe tener entre 4 y 15 caracteres"
+				}
+			},	
+			race : {
+				presence : true,
+				length : {
+					minimum : 4,
+					maximum: 15,
+					message : "debe tener entre 4 y 15 caracteres"
+				}
+			},	
+			chipNumber : {
+				presence : true,
+				length : {
+					minimum : 4,
+					maximum: 15,
+					message : "debe tener entre 4 y 15 caracteres"
+				}
+			},
+			
+//			birthdate: {
+//				datetime: {
+//				      dateOnly: true,
+//				      latest: moment.utc().subtract(18, 'years'),
+//				      message: "^You need to be atleast 18 years old" 
+//				}
+//			}
+
 		});
 	},
+	valCust : function(pet) {
+		return validate(customer, {
+			name : {
+				presence : true,
+				length : {
+					minimum : 4, 
+					message : "debe tener entre 4 y 18 caracteres"
+				}
+			},
+		
+			chipNumber : {
+				presence : true,
+				length : {
+					minimum : 4,
+					maximum: 15,
+					message : "debe tener entre 4 y 15 caracteres"
+				}
+			},	
+
+		});
+	},
+	
+	
 }
 
-if (typeof module !== "undefined" && module.exports) { // estamos en el servidor
+if (typeof module !== "undefined" && module.exports) {  
 	module.exports = Validations;
 }
+
+
+
