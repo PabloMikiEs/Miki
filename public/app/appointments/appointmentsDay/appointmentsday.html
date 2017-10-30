@@ -4,7 +4,7 @@
          <div class="col-md-12">
 			<div class="card">
 		       	<div class="header">
-		           <h3 class="title centrar">CITAS DEL {{dia}}</h3> 
+		           <h4 class="title centrar">CITAS DEL {{dia}}</h4> 
 		       	</div>
 		       	<div class="content table-responsive table-full-width">
 		           	<table class="table table-hover table-striped">
@@ -29,9 +29,10 @@
 									<div class="green" ng-if="'2' === x.appoints.status">Completado</div>
 								</td> 
 								<td>
-									<a href="/appointmentdetail/{{x.appoints._id}}" ng-show="x.appoints._id"><i class="pe-7s-look icon-big green"></i></a>
-									<a href="/appointmentdetail/add/{{dayD + x.hour}}" ng-show="!x.appoints._id" ><i class="pe-7s-plus icon-big grey"></i></a>
-
+<!-- 								<a href="/appointmentdetail/{{x.appoints._id}}" ng-show="x.appoints._id"><i class="pe-7s-look icon-big green"></i></a> -->
+									<div ng-click="show(x.appoints._id)" ng-show="x.appoints._id"><i class="pe-7s-look icon-big green"></i></div>
+<!-- 								<a href="/appointmentdetail/add/{{dayD + x.hour}}" ng-show="!x.appoints._id" ><i class="pe-7s-plus icon-big grey"></i></a> -->
+									<div ng-click="aAppoint(x.appoints._id)" ng-show="!x.appoints._id"><i class="pe-7s-plus icon-big grey"></i></div>
 								</td>
 							</tr>
 		               </tbody>
@@ -40,6 +41,10 @@
 		       </div>
 		   </div>
 		 </div> 
-		<div class="col-md-12">
-			<button class="btn btn-info pull-right" ng-click="doTheBack()"><i class="pe-7s-back"></i></button>
-		</div>   
+<!-- 		<div class="col-md-12"> -->
+<!-- 			<button class="btn btn-info pull-right" ng-click="doTheBack()"><i class="pe-7s-back"></i></button> -->
+<!-- 		</div>    -->
+
+		</div>
+	</div>
+</div>

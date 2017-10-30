@@ -11,9 +11,17 @@ angular.module('customerModule', ["ngRoute"])
     .controller('CustomerController',function($scope, $http, $location, $routeParams, customersService){
     	
     	console.log("inicializando el CustomerDetailsController...");
+    	var id = $routeParams.id;
+    	
     	
     	if(isNaN(+$routeParams.id)) {
     		$scope.customer = customersService.get({id: id});
+    		customersService.getPetsForCustomer(id).then(function(response) {
+    			console.log("Response /api/customers/" + $routeParams.id, response);
+    			$scope.customerPets = response.data;
+    		});
+    		
+    		//SIN SERVICIOS
 //	    	$http.get("/api/customers/" + $routeParams.id).then(function(response) {
 //	    		console.log("Response /api/customers/" + $routeParams.id, response);
 //	    		$scope.customer = response.data;
@@ -22,6 +30,8 @@ angular.module('customerModule', ["ngRoute"])
 //	    	$http.get("/api/customers/" + $routeParams.id + "/pets").then(function(response) {
 //	    		console.log("Response /api/customers/" + $routeParams.id + "/pets", response);
 //	    		$scope.customerPets = response.data;
+    		// FIN SIN SERVICIOS
+    		
 	    	}else {
     		$scope.customer = {};
     		$scope.customerPets = []
@@ -34,17 +44,18 @@ angular.module('customerModule', ["ngRoute"])
     		if(validationErrors) {
     			return alert(JSON.stringify(validationErrors));
     		} 
-    		
-    		$http.post("/api/customers", $scope.customer).then(function(response){
-    			$scope.customer = response.data;
-    		});
+    		customersService.save({}, $scope.customer, function(customer) {}, function(error){});
+//    		$http.post("/api/customers", $scope.customer).then(function(response){
+//    			$scope.customer = response.data;
+//    		});
     	}
 
     	$scope.edit = function() {
     		console.log("Update customer:", $scope.customer);
-    		$http.put("/api/customers/" + $scope.customer._id, $scope.customer).then(function(response){
-    			$scope.customer = response.data;
-    		});
+    		customersService.update({id: $scope.customer._id}, $scope.customer, function(customer) {}, function(error){});
+//    		$http.put("/api/customers/" + $scope.customer._id, $scope.customer).then(function(response){
+//    			$scope.customer = response.data;
+//    		});
     	}
     	
     	$scope.isNew = function() {

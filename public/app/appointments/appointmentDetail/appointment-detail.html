@@ -1,10 +1,10 @@
 <div class="content" ng-controller="appointmentController"> 
      <div class="container-fluid">
-         <div class="row">
+         <div class="row" ng-show="appointment._id">
              <div class="col-md-12">
                  <div class="card">
                      <div class="header">
-                         <h3 class="title centrar">Cita: {{appointment.dateHourStart | date :  "H:mm" }} del día {{appointment.dateHourStart | date :  "dd/MM/y" }}</h3>
+                         <h4 class="title centrar">Cita: {{appointment.dateHourStart | date :  "H:mm" }} del día {{appointment.dateHourStart | date :  "dd/MM/y" }}</h4>
                      </div>
                      <div class="content">
 								<div class="row">
@@ -46,8 +46,8 @@
                  </div>
              </div>
              
-			 <div class="col-md-12">
-			 	<button class="btn btn-info  pull-right" ng-click="doTheBack()"><i class="pe-7s-back"></i></a></button>
-			 </div>        
+<!-- 			 <div class="col-md-12"> -->
+<!-- 			 	<button class="btn btn-info  pull-right" ng-click="doTheBack()"><i class="pe-7s-back"></i></a></button> -->
+<!-- 			 </div>         -->
  
 	</div> 		     
