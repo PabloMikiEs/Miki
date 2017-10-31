@@ -4,7 +4,17 @@ angular.module('appointmentsCalendarModule', [])
     .component('appointmentsCalendarModule', {
         templateUrl:'/app/appointmentsCalendar/appointmentscalendar.html',
         controller: function($scope, $http, $routeParams, $location) {
-
+        	
+        	// PRUEBA DE SOCKET IO 
+        	var socket = io.connect();
+        	socket.on('appointments:evento1', function(data) 
+        			{console.log("Recibido el evento appointments:evento1", data);
+        				// realizar operaciones relacionadas con este evento
+        			})
+        	// hasta aqui prueba de socketio
+        	
+        			
+        			
         	var month = moment().startOf('month');
 
         	if($routeParams.month){

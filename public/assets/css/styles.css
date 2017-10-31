@@ -824,4 +824,6 @@ th {
 	color: #009688;
 } 
 
-
+input.ng-invalid {
+    background-color: red;
+}
