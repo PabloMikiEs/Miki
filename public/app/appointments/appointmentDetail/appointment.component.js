@@ -44,16 +44,17 @@ angular.module('appointmentDetailModule', ["ngRoute"])
       	
     	$scope.edit = function() {
     		console.log("Update Appointment:", $scope.appointment);
-    		$http.put("/api/appointments/" + $scope.appointment._id, $scope.appointment).then(function(response){
-    			$scope.appointment = response.data;
-    			$scope.$emit("appointments:appSave",$scope.appointment)
+    		$http.put("/api/appointments/" + $scope.appointment._id, $scope.appointment).then(
+    				function(response){
+		    			$scope.appointment = response.data;
+		    			$scope.$emit("appointments:appSave",$scope.appointment)
     		});
     	}
     	
     	$scope.delete = function() { 
     		$http.delete("/api/appointments/" + $scope.appointment._id, $scope.appointment).then(
 					function(response) {
-						$scope.appointment = response.data;
+						$scope.appointment = response.data; 
 						$scope.$emit("appointments:appDelete",$scope.appointment)
 						//history.back();
 					}, function() {

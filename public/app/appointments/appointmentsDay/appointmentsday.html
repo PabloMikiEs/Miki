@@ -5,6 +5,8 @@
 			<div class="card">
 		       	<div class="header">
 		           <h4 class="title centrar">CITAS DEL {{dia}}</h4> 
+		            
+		           <input class="form-control margin20" type="text" placeholder="Buscar cita de ..."  ng-model="test">
 		       	</div>
 		       	<div class="content table-responsive table-full-width">
 		           	<table class="table table-hover table-striped">
@@ -17,7 +19,7 @@
 		               		<th></th> 
 		               </thead>
 		               <tbody class="centrar">
-							<tr ng-repeat="x in timetable">
+							<tr ng-repeat="x in timetable | filter:test"">
 								<td>{{x.hour}}</td> 
 								<td>{{x.appoints.petID.specie}}</td> 
 								<td>{{x.appoints.petID.name}}</td>

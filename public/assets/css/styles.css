@@ -827,3 +827,8 @@ th {
 input.ng-invalid {
     background-color: red;
 }
+.margin20{
+	margin: 20px 0px;
+	
+}
+
