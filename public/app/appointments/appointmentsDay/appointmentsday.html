@@ -32,7 +32,7 @@
 <!-- 								<a href="/appointmentdetail/{{x.appoints._id}}" ng-show="x.appoints._id"><i class="pe-7s-look icon-big green"></i></a> -->
 									<div ng-click="show(x.appoints._id)" ng-show="x.appoints._id"><i class="pe-7s-look icon-big green"></i></div>
 <!-- 								<a href="/appointmentdetail/add/{{dayD + x.hour}}" ng-show="!x.appoints._id" ><i class="pe-7s-plus icon-big grey"></i></a> -->
-									<div ng-click="aAppoint(x.appoints._id)" ng-show="!x.appoints._id"><i class="pe-7s-plus icon-big grey"></i></div>
+									<div ng-click="aAppoint(dayD + x.hour)" ng-show="!x.appoints._id"><i class="pe-7s-plus icon-big grey"></i></div>
 								</td>
 							</tr>
 		               </tbody>

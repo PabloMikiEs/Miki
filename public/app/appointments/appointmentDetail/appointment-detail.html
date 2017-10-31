@@ -1,10 +1,10 @@
 <div class="content" ng-controller="appointmentController"> 
      <div class="container-fluid">
-         <div class="row" ng-show="appointment._id">
+       <div class="row" ng-show="appointment.dateHourStart"> <!--   *ng-show="appointment._id"--> 
              <div class="col-md-12">
                  <div class="card">
                      <div class="header">
-                         <h4 class="title centrar">Cita: {{appointment.dateHourStart | date :  "H:mm" }} del día {{appointment.dateHourStart | date :  "dd/MM/y" }}</h4>
+                         <h4 class="title centrar">Hora de cita: {{appointment.dateHourStart | date :  "H:mm" }}</h4>
                      </div>
                      <div class="content">
 								<div class="row">

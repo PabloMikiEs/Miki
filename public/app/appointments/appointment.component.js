@@ -12,13 +12,21 @@ angular.module('appointmentModule', ["ngRoute"])
         	
         	// Fin de coger el día
         	
-			$scope.$on('appointments:showAppClick',(event, data) => 
-					{ 
-						console.log("appointments:showAppClick"); 
-						$scope.$broadcast("appointments:showApp", data); 
-					
-					}
-				);
+			$scope.$on('appointments:showAppClick',(event, data) => { 
+					console.log("appointments:showAppClick"); 
+					$scope.$broadcast("appointments:showApp", data); 
+			});
+			
+			$scope.$on("appointments:appSave", (event, data) => {
+            	console.log("Cita añadida");
+                $scope.$broadcast("apppointments:loadApp", {currentDate : data.dateHourStart});
+            });
+			
+			$scope.$on("appointments:appDelete", (event, data) => {
+            	console.log("Cita borrada");
+                $scope.$broadcast("apppointments:loadApp", {currentDate : data.dateHourStart});
+            });
+			
         	
         }
 

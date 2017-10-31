@@ -14,6 +14,7 @@ angular.module('appointmentsDayModule', [])
         		console.log ("appointmentsDayList->$onInit")
         		console.log ("currentDate",this.currentDate)
         		var currentDate = moment(this.currentDate,"YYYYMMDD")
+        		$scope.currentDate = moment(this.currentDate,"YYYYMMDD")
         		loadAppointments(currentDate.toDate())
         	}
         	
@@ -26,6 +27,7 @@ angular.module('appointmentsDayModule', [])
         	function loadAppointments(currentDate){
         		
         		$scope.dia = moment(currentDate).format('dddd DD MMMM YYYY');
+ 
             	$scope.dayD = moment(currentDate).format('YYYYMMDD'); 
             	$scope.timetable = [];
             	var fromDate = moment(currentDate).format("YYYYMMDD");
@@ -51,9 +53,9 @@ angular.module('appointmentsDayModule', [])
         		$scope.$emit("appointments:showAppClick", {id: id}); 	 
       		};
       		
-      		$scope.aAppoint = (id) => {
-      			console.log("estoy probando añadir con la id:" + id)
-    				$scope.$emit("appointments:showAppClick", {id: id});		
+      		$scope.aAppoint = (data) => {
+      			console.log("estoy probando añadir una cita para las : " + data)
+    			$scope.$emit("appointments:showAppClick", {datetime: data});		
         		  
       		};
          

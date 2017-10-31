@@ -43,7 +43,9 @@ angular.module('appointmentsCalendarModule', [])
             	var dates = [];
                 
             	for (var i = 0; i < $scope.cells.length; i++ ) {
-                    if (i % 7 == 0) dates.push([]);
+                    if (i % 7 == 0) {
+                    	dates.push([]);
+                    }
                     dates[dates.length-1].push($scope.cells[i]);
                 }
              
