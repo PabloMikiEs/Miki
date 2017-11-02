@@ -21,7 +21,7 @@ angular.module('petsServices', [])
         service.getPetById = (id) => {
             var q = $q.defer();
 
-            $http.get('api/pet/' + id)
+            $http.get('api/pets/' + id)
                 .success(function (res) {
                     q.resolve(res);
                 }).error(function (err) {
@@ -32,7 +32,7 @@ angular.module('petsServices', [])
 
         service.deletePet = (id) => {
             var q = $q.defer();
-            $http.delete('api/pet/' + id, {params: {_id: id}})
+            $http.delete('api/pets/' + id, {params: {_id: id}})
                 .success(function (res) {
                     q.resolve(res);
                 }).error(function (err) {
@@ -44,7 +44,7 @@ angular.module('petsServices', [])
         service.postPet = (obj) => {
             var q = $q.defer();
 
-            $http.post("api/pet", JSON.stringify(obj)).success(function (res) {
+            $http.post("api/pets", JSON.stringify(obj)).success(function (res) {
                 q.resolve(res);
             }).error(function (err) {
                 q.reject(':(' + err);
@@ -54,7 +54,7 @@ angular.module('petsServices', [])
 
         service.putPet = (obj) => {
             var q = $q.defer();
-            $http.put("api/pet/" + obj._id, JSON.stringify(obj)).success(function (res) {
+            $http.put("api/pets/" + obj._id, JSON.stringify(obj)).success(function (res) {
                 q.resolve(res);
             }).error(function (err) {
                 q.reject(err);

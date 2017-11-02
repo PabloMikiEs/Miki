@@ -8,9 +8,9 @@ angular.module('customersModule')
         }
  
     })
-    .controller('ClientsController',function($scope, $http, $location, $routeParams, customersService){
+    .controller('ClientsController',function($scope, $http, $location, $routeParams, customersServices){
         console.log("Cargamos la lista de clientes");
     	$scope.clients = [];
-		$scope.clients = customersService.query();
+		$scope.clients = customersServices.query();
     });
  

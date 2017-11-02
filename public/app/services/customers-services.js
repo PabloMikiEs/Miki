@@ -1,7 +1,9 @@
 'use strict';
 
-angular.module('customersService', [])
-	.factory('customersService', function($resource, $http, $q){
+// Usando $resource en lugar de $http
+
+angular.module('customersServices', [])
+	.factory('customersServices', function($resource, $http, $q){
 	    var customerResource = $resource('/api/customers/:id', {id: '@id'}, {
 	        update: { method:'put'},
 	    });

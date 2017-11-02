@@ -8,7 +8,7 @@ angular.module('appointmentDetailModule', ["ngRoute"])
         }
 
     })
-    .controller('appointmentController',function($scope, $http,/* $location,$routeParams*/ ){
+    .controller('appointmentController',function($scope, $http, appointmentsServices/* $location,$routeParams*/ ){
  
     	console.log("inicializando el appointmentDetailsController...");
     	$http.get("/api/pets").then(function(response) {
@@ -36,9 +36,20 @@ angular.module('appointmentDetailModule', ["ngRoute"])
     	$scope.submit = function() {
     		console.log("Insert appointment:", $scope.appointment);
     		$http.post("/api/appointments/", $scope.appointment).then(function(response){
-    			$scope.appointment = response.data;
+    			$scope.appointment = response.data; 
     		});
     		$scope.$emit("appointments:appSave",$scope.appointment)
+    		
+    		
+//    		Con servicios
+//    		appointmentsService.saveAppointment($scope.appointment).then(
+//    				function(response) {
+//    					$scope.appointment = response;
+//    					$scope.$emit("appointments:appointmentSaved", $scope.appointment)
+//    				}, function(response) {
+//    					console.log("Error", response);
+//    				});
+
     	}
     	
       	
@@ -47,7 +58,7 @@ angular.module('appointmentDetailModule', ["ngRoute"])
     		$http.put("/api/appointments/" + $scope.appointment._id, $scope.appointment).then(
     				function(response){
 		    			$scope.appointment = response.data;
-		    			$scope.$emit("appointments:appSave",$scope.appointment)
+		    			$scope.$emit("appointments:appSave",$scope.appointment) 
     		});
     	}
     	
@@ -57,6 +68,7 @@ angular.module('appointmentDetailModule', ["ngRoute"])
 					function(response) {
 						$scope.appointment = response.data; 
 						$scope.$emit("appointments:appDelete",aux) 
+						appointmentServicie.clearCache();
 					}, function() {
 						alert("Ha fallado el borrado!");
 					});

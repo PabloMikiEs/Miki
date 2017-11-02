@@ -8,6 +8,9 @@ angular.module('petStore')
         $locationProvider.html5Mode({ enabled: true });
         $routeProvider
             .when("/",{
+            	template: "<appointments-calendar-module></appointments-calendar-module>" 
+            })
+            .when("/customers",{
             	template: "<customers-module></customers-module>" 
             })
             .when('/customers/:id', {

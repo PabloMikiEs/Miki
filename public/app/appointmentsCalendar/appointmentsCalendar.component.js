@@ -7,11 +7,11 @@ angular.module('appointmentsCalendarModule', [])
         	moment.locale('es'); 
         	
         	// PRUEBA DE SOCKET IO 
-        	var socket = io.connect();
-        	socket.on('appointments:evento1', function(data) 
-        			{console.log("Recibido el evento appointments:evento1", data);
-        				// realizar operaciones relacionadas con este evento
-        			})
+//        	var socket = io.connect();
+//        	socket.on('appointments:evento1', function(data) 
+//        			{console.log("Recibido el evento appointments:evento1", data);
+//        				// realizar operaciones relacionadas con este evento
+//        			})
         	// hasta aqui prueba de socketio
         	
         			

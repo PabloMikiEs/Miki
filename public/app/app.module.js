@@ -5,7 +5,7 @@ angular.module('petStore', [
     'ngRoute',
     '720kb.datepicker',
     'customersModule', 
-    'customersService',
+    'customersServices',
     'htmlDirectivesModule',
     'customerModule',
     'petsModule',
@@ -13,5 +13,7 @@ angular.module('petStore', [
     'appointmentsCalendarModule',
     'appointmentsDayModule',
     'appointmentDetailModule',
-    'appointmentModule'
+    'appointmentModule',
+    'appointmentsServices',
+    'petsServices'
 ]);
