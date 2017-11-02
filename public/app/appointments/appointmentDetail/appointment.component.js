@@ -62,6 +62,5 @@ angular.module('appointmentDetailModule', ["ngRoute"])
 					});
     	}
 
-        	
 	    	
     });

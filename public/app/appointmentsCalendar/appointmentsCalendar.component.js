@@ -2,8 +2,9 @@
 
 angular.module('appointmentsCalendarModule', [])
     .component('appointmentsCalendarModule', {
-        templateUrl:'/app/appointmentsCalendar/appointmentscalendar.html',
+        templateUrl:'/app/appointmentsCalendar/appointmentsCalendar.html',
         controller: function($scope, $http, $routeParams, $location) {
+        	moment.locale('es'); 
         	
         	// PRUEBA DE SOCKET IO 
         	var socket = io.connect();
@@ -62,6 +63,12 @@ angular.module('appointmentsCalendarModule', [])
                 return $scope.dates = dates;
           	});	
         	
+        	$scope.doTheBack = function() {
+      		  window.history.back();
+      		};
         	
         }
+    
+    	
+
 });

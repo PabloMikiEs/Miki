@@ -49,24 +49,15 @@ const Validations= {
 
 		});
 	},
-	valCust : function(pet) {
+	valCust : function(customer) {
 		return validate(customer, {
-			name : {
+			firstName : {
 				presence : true,
 				length : {
 					minimum : 4, 
 					message : "debe tener entre 4 y 18 caracteres"
 				}
-			},
-		
-			chipNumber : {
-				presence : true,
-				length : {
-					minimum : 4,
-					maximum: 15,
-					message : "debe tener entre 4 y 15 caracteres"
-				}
-			},	
+			} 	
 
 		});
 	},

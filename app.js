@@ -6,10 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var moment = require('moment');
 
-//var sample = require('./routes/sample');
-//var customer2 = require('./routes/customers');
-
-
 // añadir conexión a mongoose
 var mongoose = require ('mongoose');
 mongoose.connect('mongodb://localhost/petStore' , {useMongoClient:true});

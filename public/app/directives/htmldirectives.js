@@ -2,34 +2,61 @@
 
 angular.module('htmlDirectivesModule', [])
 	.directive(
-			'customerForm',
+			'formularios',
 			function() {
 				return {
 					restrict : 'E',
 					replace : true,
 					scope: {
+						class: '@',
+						type:'@',
 						label: '@',
 						model: '=',
 						name: '@',
 						placeholder: '@',
 					},
-					template : 	'<div class="col-md-6">\
+					template : 	'<div class="{{class}}">\
 									<div class="form-group"> \
 								      <label>{{label}}</label>\
-								      <input type="text" class="form-control" name="{{name}}" placeholder={{placeholder}} ng-model="model">\
+								      <input type="{{type}}" class="form-control" name="{{name}}" placeholder={{placeholder}} ng-model="model">\
 									</div>\
 								</div>'					
 				}
 			})
-	.directive('buttonCustomer', function() {
+			
+	.directive('textAreaDirective', function() { 
+		return { 
+			restrict : 'E', 
+			replace : true, 
+			scope: { 
+				class: '@', 
+				rows:'@',
+				label: '@',
+				model: '=',
+				name: '@',
+				placeholder: '@',
+				}, 
+				template : '<div class="{{class}}">\
+					         	<div class="form-group">\
+					                <label>{{label}}</label>\
+					                <textarea rows="{{rows}}" class="form-control" name="{{name}}" ng-model="model" placeholder={{placeholder}}></textarea>\
+				    			</div>\
+							</div>'	
+					
+					 
+		}
+	})
+
+	.directive('botones', function() {
 		return {
 			restrict : 'E',
 			replace : true,
 			scope: {
 				click: '=',
+				class: '@', 
 				show: '=',
 				value: '@',
 			},			
-			template : '<input type="button" class="btn btn-info btn-fill pull-right" ng-click="click" ng-show="show" value=={{value}}>'
+			template : '<input type="button" class="{{class}}" ng-click="click" ng-show="show" value=={{value}}>'
 		}
 	})

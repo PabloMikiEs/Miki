@@ -44,6 +44,7 @@ angular.module('customerModule', ["ngRoute"])
     		if(validationErrors) {
     			return alert(JSON.stringify(validationErrors));
     		} 
+    		
     		customersService.save({}, $scope.customer, function(customer) {}, function(error){});
 //    		$http.post("/api/customers", $scope.customer).then(function(response){
 //    			$scope.customer = response.data;
@@ -56,6 +57,7 @@ angular.module('customerModule', ["ngRoute"])
 //    		$http.put("/api/customers/" + $scope.customer._id, $scope.customer).then(function(response){
 //    			$scope.customer = response.data;
 //    		});
+    		alert("Cliente editado");
     	}
     	
     	$scope.isNew = function() {

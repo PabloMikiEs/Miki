@@ -10,9 +10,8 @@
         <div class="content table-responsive table-full-width">
             <table class="table table-hover table-striped">
                 <thead class="title centrar">
-                	<th > </th> 
-                    <th class="title centrar">ID</th>
-                	<th class="title centrar">Nombre completo</th>
+                	<th></th> 
+                    <th class="title centrar">Nombre</th> 
                 	<th class="title centrar">Telefono</th>
                 	<th class="title centrar">Email</th> 
                 	<th> </th> 
@@ -20,8 +19,8 @@
                 <tbody id="myTable">
                 	<div>
                      <tr data-ng-repeat="x in clients  | filter:test" class="centrar">
-                     	<td><i class="pe-7s-users"></i></td>
-                     	<td>{{x._id}}</td>
+                     	<td><i class="pe-7s-users icon-big"></i></td>
+                     	 
                      	<td>{{x.firstName}} {{x.lastName}}</td>
                      	<td>{{x.phone}}</td>
                      	<td>{{x.email}}</td>
@@ -34,7 +33,10 @@
 
         </div>
     </div>
-      <div><button class="btn-round btn btn-info"><a href="customers/add/"><i class="pe-7s-add-user" aria-hidden="true"></i>Añadir clientes</a></button></div>
+    
+	<div>
+		<a href="customers/add/" class="btn-round btn btn-info"role="button"><i class="pe-7s-add-user"></i>Añadir clientes</a>
+	</div>
     
 </div>
 

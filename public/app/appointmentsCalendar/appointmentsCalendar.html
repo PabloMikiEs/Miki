@@ -9,7 +9,7 @@
 			       	</div>
 	 	           	 
 					<section class="content nav">
-							<div class="row col-md-12">
+							<div class="row">
 	                                <div class="col-md-2 col-md-offset-3">
 	                                    <a href="appointments/{{previus}}"><button class="btn btn-default btn-block btn-green"><i class="pe-7s-angle-left"></i></button></a>
 	                                </div>
@@ -21,12 +21,12 @@
 	                                </div>
 	                 		</div>
 	  
-							<div class="row">		
-								<table class="calendario col-md-8 col-md-offset-2"> 
+							<div class="row row2">		
+								<table class="calendario col-md-12"> 
 									<thead> 
 								       <th>Lunes</th>
 								       <th>Martes</th>
-								       <th>Miercoles</th>
+								       <th>Miércoles</th>
 								       <th>Jueves</th>
 								       <th>Viernes</th>
 								       <th>Sábado</th>
@@ -34,11 +34,12 @@
 	                				</thead>
 						        	<tbody>
 										<tr ng-repeat="days in dates">
-											<td ng-repeat="day in days"class="tdcalendar"> 
+											<td ng-repeat="day in days" > 
+							            		<div ng-if="day.date" class="tdcalendar">
 							            		<b>{{ day.date }}</b><br> 
 							                	<a href="/appointment/day/{{actual | date:'yyyyMM'}}{{day.date}}">
 							                		<div class="col-centered">{{day.contador}} <span ng-if="day.date">citas</span></div>
-							                	</a>
+							                	</a></div>
 							        		</td>
 							     		</tr>
 						        	</tbody>

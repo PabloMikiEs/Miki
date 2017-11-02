@@ -63,7 +63,9 @@
 			                                 <div class="col-md-4">
 			                                     <div class="form-group" class='input-group date' id='datetimepicker5'>
 			                                         <label>Fecha de nacimiento</label>
-			                                         <input type="text" class="form-control" name="name" ng-model="pet.birthdate " placeholder="Fecha de nacimiento">
+			                                         <datepicker  button-prev="<i class='fa fa-arrow-left'></i>" button-next="<i class='fa fa-arrow-right'></i>">
+			                                         	<input type="text" class="form-control" name="name" ng-model="pet.birthdate " placeholder="Fecha de nacimiento">
+			                                         </datepicker>
 			                                     </div>
 			                                 </div>
 			                                 <div class="col-md-4">
@@ -98,8 +100,8 @@
              </div>
              
 			 <div class="col-md-12">
-			 	<button class="btn btn-info  pull-right"><a href="/"><i class="pe-7s-back"></i></a></button>
-			 </div>             
+			 	<button class="btn btn-info pull-right" ng-click="doTheBack()"><i class="pe-7s-back"></i></a></button>
+			 </div>               
        </div>     
  </div>            
              

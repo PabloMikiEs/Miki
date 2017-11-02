@@ -14,32 +14,27 @@
 	                             <div class="row">
 	                                 <div class="col-md-6">
 	                                     <div class="form-group">
-	                                         <label></label>
+	                                         <label>ID</label>
 	                                         <input type="text" class="form-control" disabled placeholder="Id" value="{{customer._id}}">
 	                                     </div>
 	                                 </div>
-	                                 <customer-form data-label="DNI" data-model="customer.dni" data-name="dni" data-placeholder="dni" />
+	                                 <formularios data-class="col-md-6" data-type="text" data-label="DNI" data-model="customer.dni" data-name="dni" data-placeholder="dni" />
 	                             </div>
 	                              
 
 	                             <div class="row">
-	                             	<customer-form data-label="Nombre" data-model="customer.firstName" data-name="firstName" data-placeholder="firstName" />
-	                                <customer-form data-label="Apellidos" data-model="customer.lastName" data-name="lastName" data-placeholder="lastName" />
+	                             	<formularios data-class="col-md-6" data-type="text" data-label="Nombre" data-model="customer.firstName" data-name="firstName" data-placeholder="firstName" />
+	                                <formularios data-class="col-md-6" data-type="text" data-label="Apellidos" data-model="customer.lastName" data-name="lastName" data-placeholder="lastName" />
 	                             </div>
 
 								<div class="row">
-									<customer-form data-label="Teléfono" data-model="customer.phone" data-name="phone" data-placeholder="phone" />
-									<customer-form data-label="Email" data-model="customer.email" data-name="email" data-placeholder="email" />
+									<formularios data-class="col-md-6" data-type="text" data-label="Teléfono" data-model="customer.phone" data-name="phone" data-placeholder="phone" />
+									<formularios data-class="col-md-6" data-type="text" data-label="Email" data-model="customer.email" data-name="email" data-placeholder="email" />
 	                             </div>
 
                              <div class="row">
-                                 <div class="col-md-12">
-                                     <div class="form-group">
-                                         <label>Más información</label>
-                                         <textarea rows="5" class="form-control"  name="note" ng-model="customer.note" placeholder="note" ></textarea>
-                                     </div>
-                                 </div>
-                             </div>
+								<text-area-directive data-class="col-md-12" data-rows="5" data-label="Más información" data-model="customer.note" data-name="note" data-placeholder="Notas de texto" />
+							</div>
 							<div class="row">
 								<div class="col-md-12">
 									<input type="button" class="btn btn-info btn-fill pull-right" ng-click="submit()" ng-show="!customer._id" value="Save"/>
@@ -54,25 +49,24 @@
              </div>
              
              
-            <div class="col-md-12">
-			    <div class="card">
+			<div class="col-md-12">
+				<div class="card">
 			        <div class="header">
-			            <h4 class="title">MASCOTAS DE {{customer.firstName}} {{customer.lastName}}</h4>
-			            <p class="category">Lista de mascotas de {{customer._id}}</p>
+			            <h4 class="title">Mascotas de {{customer.firstName}} {{customer.lastName}}</h4>
+			            <p class="category">Lista de mascotas</p>
 			        </div>
 			        <div class="content table-responsive table-full-width">
 			            <table class="table table-hover table-striped">
 			                <thead>
 			                	<th> </th> 
-			                    <th>ID</th>
-			                	<th>Nombre</th>
-			                	<th>Especie</th>
-			                	<th>Nª chip</th> 
+			                    <th  class="title centrar">ID</th>
+			                	<th class="title centrar">Nombre</th>
+			                	<th class="title centrar">Especie</th>
+			                	<th class="title centrar">Nª chip</th> 
 			                	<th> </th> 
 			                </thead>
-			                <tbody>
-			                	<div >
-			                     <tr data-ng-repeat="pet in customerPets">
+			                <tbody> 
+								<tr data-ng-repeat="pet in customerPets"  class="centrar">
 			                     	<td><img src="{{pet.photoUrl}}" alt="<i class='pe-7s-camera'></i>" class="foto"></td>
 			                     	<td>{{pet._id}}</td>
 			                     	<td>{{pet.name}}</td>
@@ -80,15 +74,15 @@
 			                     	<td>{{pet.chipNumber}}</td>
 			                     	<td><a href="/pets/{{pet._id}}"><i class="pe-7s-look icon-big"></a></td>
 			                     </tr>
-			                   </div>
 			                </tbody>
 			                
 			            </table>
 			        </div>
-			        <div><button class="btn-round btn btn-info pull-center"><a href="/customers/{{customer._id}}/pets/add/"><i class="pe-7s-add-user"></i>Añadir mascotas</a></button></div>
-    
-			    </div>
-			  </div> 
+			        <div>
+						<a href="/customers/{{customer._id}}/pets/add/" class="btn-round btn btn-info" role="button"><i class="pe-7s-add-user"></i>Añadir mascotas</a>
+					</div>
+				</div>
+			</div> 
 			 <div class="col-md-12">
 			 	<button class="btn btn-info pull-right" ng-click="doTheBack()"><i class="pe-7s-back"></i></a></button>
 			 </div>             

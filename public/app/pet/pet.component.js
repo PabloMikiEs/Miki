@@ -9,7 +9,7 @@ angular.module('petModule', ["ngRoute"])
 
     })
     .controller('petController',function($scope, $http, $location, $routeParams){
-    	console.log("inicializando el PetController...");
+    	console.log("inicializando el PetController..."); 
     	
     	if(typeof $routeParams.id !== 'undefined' ) {
 	    	$http.get("/api/pets/" + $routeParams.id).then(function(response) {
@@ -54,4 +54,8 @@ angular.module('petModule', ["ngRoute"])
 						history.back();
 					});
     	}
+    	
+    	$scope.doTheBack = function() {
+    		  window.history.back();
+    		};
     });
