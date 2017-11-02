@@ -20,7 +20,7 @@ angular.module('appointmentModule', ["ngRoute"])
             });
 			
 			$scope.$on("appointments:appDelete", (event, data) => {
-            	console.log("Cita borrada");
+            	console.log("Cita añadida");
                 $scope.$broadcast("apppointments:loadApp", {currentDate : data.dateHourStart});
             });
 			

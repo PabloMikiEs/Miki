@@ -52,11 +52,11 @@ angular.module('appointmentDetailModule', ["ngRoute"])
     	}
     	
     	$scope.delete = function() { 
+    		var aux = $scope.appointment;
     		$http.delete("/api/appointments/" + $scope.appointment._id, $scope.appointment).then(
 					function(response) {
 						$scope.appointment = response.data; 
-						$scope.$emit("appointments:appDelete",$scope.appointment)
-						//history.back();
+						$scope.$emit("appointments:appDelete",aux) 
 					}, function() {
 						alert("Ha fallado el borrado!");
 					});
