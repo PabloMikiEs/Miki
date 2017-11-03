@@ -150,9 +150,9 @@ https://github.com/Curso-Fullstack-MEAN-Octubre2017/Miki/blob/master/public/app/
 
 ![Detalle clientes y sus mascotas](https://raw.githubusercontent.com/Curso-Fullstack-MEAN-Octubre2017/Miki/master/public/assets/img/image7.jpg)
 
-#IMPLEMENTACIÓN
+# IMPLEMENTACIÓN
 
-##Configuración general
+## Configuración general
 
 Estos son los archivos donde aparecen las configuraciones del proyecto 
 
