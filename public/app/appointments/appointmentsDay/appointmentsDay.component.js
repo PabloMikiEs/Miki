@@ -63,6 +63,5 @@ angular.module('appointmentsDayModule', [])
         		  window.history.back();
         		};
 
-        	
        }
     });

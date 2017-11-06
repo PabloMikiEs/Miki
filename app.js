@@ -10,6 +10,7 @@ var moment = require('moment');
 var mongoose = require ('mongoose');
 mongoose.connect('mongodb://localhost/petStore' , {useMongoClient:true});
 
+//Express
 var app = express();
 
 //Añadimos socketIO

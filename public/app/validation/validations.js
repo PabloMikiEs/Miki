@@ -1,6 +1,7 @@
 if (typeof validate !== "function") {  
 	validate = require("validate.js");
 }
+
 /**
  * https://validatejs.org/
  */

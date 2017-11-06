@@ -5,7 +5,6 @@ const Customer = require('../models/customer');
 const Pet = require('../models/pet');
 var moment = require('moment');
 
-
 router.get('/appointments',(req, res)=> { 
 	Appointment.find({}, (err, Appointment)=> {
 	res.json(Appointment); 
@@ -112,6 +111,8 @@ router.delete('/appointments/:id',function(req, res) {
 		}
 	});
 });
+
+
 module.exports = router;
 
 

@@ -7,7 +7,6 @@ angular.module('petsModule', [])
             $http.get('/api/pets').then(function(response) {
             	$scope.pets = response.data;
             }); 
-     
         	console.log("Modulo mascotas")
         }
 

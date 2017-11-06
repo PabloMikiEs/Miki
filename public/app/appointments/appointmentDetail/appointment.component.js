@@ -8,7 +8,7 @@ angular.module('appointmentDetailModule', ["ngRoute"])
         }
 
     })
-    .controller('appointmentController',function($scope, $http, appointmentsServices/* $location,$routeParams*/ ){
+    .controller('appointmentController',function($scope, $http/* , appointmentsServices, $location,$routeParams*/ ){
  
     	console.log("inicializando el appointmentDetailsController...");
     	$http.get("/api/pets").then(function(response) {

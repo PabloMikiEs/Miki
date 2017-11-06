@@ -30,7 +30,6 @@ var appointment4  = new Appointment({
 	"status" : "2"
 }); 
 
-
 function testInsertAppointment() {
 	const appointment = new Appointment(appointment4);
 	appointment.save((err) => {
@@ -42,21 +41,4 @@ function testInsertAppointment() {
 	})
 }
 
-//function testSearchCustomers() {
-//	var search = {};
-//	var regexp = new RegExp("gonzalez", "i")
-//	search.firstName = regexp;
-//	search.lastName = regexp;
-//	console.log("Search customers:", search);
-//	
-//	Customer.find(search, (err, customers) => {
-//		if (err) {
-//			console.error(err);
-//		} else {
-//			console.log("testSearchCustomers", customers);
-//		}
-//	}).sort({'_id' : -1});
-//}
-
 testInsertAppointment();
-//testSearchAppointment();

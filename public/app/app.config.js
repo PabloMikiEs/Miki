@@ -50,6 +50,8 @@ angular.module('petStore')
             .otherwise({
                 template: "Other page"
             });
+        
     });
+
 
 

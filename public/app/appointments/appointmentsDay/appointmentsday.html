@@ -1,52 +1,46 @@
 <div class="content">
      <div class="container-fluid">
          <div class="row">
-         <div class="col-md-12">
-			<div class="card">
-		       	<div class="header">
-		           <h4 class="title centrar">Citas del {{dia}}</h4> 
-		            
-		           <input class="form-control margin20" type="text" placeholder="Buscar cita de ..."  ng-model="test">
-		       	</div>
-		       	<div class="content table-responsive table-full-width">
-		           	<table class="table table-hover table-striped">
-						<thead> 
-		               		<th class="title centrar">hora</th>
-		               		<th class="title centrar">Especie</th>
-		               		<th class="title centrar">mascota</th>
-		               		<th class="title centrar">dueño</th>
-		               		<th class="title centrar">Estado</th>  
-		               		<th></th> 
-		               </thead>
-		               <tbody class="centrar">
-							<tr ng-repeat="x in timetable | filter:test"">
-								<td>{{x.hour}}</td> 
-								<td>{{x.appoints.petID.specie}}</td> 
-								<td>{{x.appoints.petID.name}}</td>
-								<td>{{x.appoints.petID.ownerId.firstName}}</td> 
-								<td>
-									<div class="status red" ng-if="'-1' === x.appoints.status">Cancelado</div>
-									<div ng-if="'0' === x.appoints.status">Pendiente</div>
-									<div class="orange" ng-if="'1' === x.appoints.status">En curso</div> 
-									<div class="green" ng-if="'2' === x.appoints.status">Completado</div>
-								</td> 
-								<td>
-<!-- 								<a href="/appointmentdetail/{{x.appoints._id}}" ng-show="x.appoints._id"><i class="pe-7s-look icon-big green"></i></a> -->
+	         <div class="col-md-12">
+				<div class="card">
+			       	<div class="header">
+			           <h4 class="title centrar">Citas del {{dia}}</h4> 
+			            
+			           <input class="form-control margin20" type="text" placeholder="Buscar cita de ..."  ng-model="test">
+			       	</div>
+			       	<div class="content table-responsive table-full-width">
+			           	<table class="table table-hover table-striped">
+							<thead> 
+			               		<th class="title centrar">hora</th>
+			               		<th class="title centrar">Especie</th>
+			               		<th class="title centrar">mascota</th>
+			               		<th class="title centrar">dueño</th>
+			               		<th class="title centrar">Estado</th>  
+			               		<th></th> 
+			               </thead>
+			               <tbody class="centrar">
+								<tr ng-repeat="x in timetable | filter:test"">
+									<td>{{x.hour}}</td> 
+									<td>{{x.appoints.petID.specie}}</td> 
+									<td>{{x.appoints.petID.name}}</td>
+									<td>{{x.appoints.petID.ownerId.firstName}}</td> 
+									<td>
+										<div class="status red" ng-if="'-1' === x.appoints.status">Cancelado</div>
+										<div ng-if="'0' === x.appoints.status">Pendiente</div>
+										<div class="orange" ng-if="'1' === x.appoints.status">En curso</div> 
+										<div class="green" ng-if="'2' === x.appoints.status">Completado</div>
+									</td> 
+									<td>
 									<div ng-click="show(x.appoints._id)" ng-show="x.appoints._id"><i class="pe-7s-look icon-big green"></i></div>
-<!-- 								<a href="/appointmentdetail/add/{{dayD + x.hour}}" ng-show="!x.appoints._id" ><i class="pe-7s-plus icon-big grey"></i></a> -->
-									<div ng-click="aAppoint(dayD + x.hour)" ng-show="!x.appoints._id"><i class="pe-7s-plus icon-big grey"></i></div>
-								</td>
-							</tr>
-		               </tbody>
-		           </table>
-				 
-		       </div>
-		   </div>
-		 </div> 
-<!-- 		<div class="col-md-12"> -->
-<!-- 			<button class="btn btn-info pull-right" ng-click="doTheBack()"><i class="pe-7s-back"></i></button> -->
-<!-- 		</div>    -->
-
+	 								<div ng-click="aAppoint(dayD + x.hour)" ng-show="!x.appoints._id"><i class="pe-7s-plus icon-big grey"></i></div>
+									</td>
+								</tr>
+			               </tbody>
+			           </table>
+					 
+			       </div>
+			   </div>
+			 </div> 
 		</div>
 	</div>
 </div>

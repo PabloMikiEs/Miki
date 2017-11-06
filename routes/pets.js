@@ -3,20 +3,22 @@ var router = express.Router();
 const Pets = require('../models/pet');
 const Customer = require('../models/customer');
 
+// Lista mascotas
 router.get('/pets',(req, res)=> {
 	Pets.find({}, (err, Pets)=> {
 	res.json(Pets);
    });
 });
 
+
+//Mascota por ID
 router.get('/pets/:id',(req, res)=> {
 	Pets.findById({_id:req.params.id}, (err, Pets)=> {
 		res.json(Pets);
 	});
 });
 
- 
-
+// Aañidr mascota
 router.post('/pets', (req, res) => {
 	   var pets = new Pets(req.body);
 	   
@@ -30,6 +32,7 @@ router.post('/pets', (req, res) => {
 		}) ;   
 });
 
+//Editar mascota
 router.put('/pets/:id', (req, res, next) => {
 	Pets.findOne({_id : req.params.id }, function(err, pets) {
 		if (err) {
@@ -55,6 +58,7 @@ router.put('/pets/:id', (req, res, next) => {
 	});
 });
 
+//Eliminar mascota
 router.delete('/pets/:id',function(req, res) {
 	console.log("/pets/" + req.params.id);
 	// borrado -->  model.findByIdAndRemove(req.params.id, function(err)....
@@ -67,6 +71,7 @@ router.delete('/pets/:id',function(req, res) {
 		}
 	});
 });
+
 
 module.exports = router;
 

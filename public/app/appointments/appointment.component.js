@@ -23,8 +23,7 @@ angular.module('appointmentModule', ["ngRoute"])
             	console.log("Cita añadida");
                 $scope.$broadcast("apppointments:loadApp", {currentDate : data.dateHourStart});
             });
-			
-        	
+
         }
 
     })

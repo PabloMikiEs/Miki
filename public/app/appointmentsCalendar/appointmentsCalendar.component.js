@@ -13,8 +13,7 @@ angular.module('appointmentsCalendarModule', [])
 //        				// realizar operaciones relacionadas con este evento
 //        			})
         	// hasta aqui prueba de socketio
-        	
-        			
+
         			
         	var month = moment().startOf('month');
 
@@ -68,7 +67,5 @@ angular.module('appointmentsCalendarModule', [])
       		};
         	
         }
-    
-    	
-
+	
 });

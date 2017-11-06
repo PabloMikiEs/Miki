@@ -4,7 +4,6 @@ const Customer = require('../models/customer');
 const Pets = require('../models/pet');
 
 
-
 router.get('/customers',(req, res)=> {
 	Customer.find({}, (err, Customer)=> {
 	res.json(Customer);
@@ -64,7 +63,6 @@ router.put('/customers/:id', (req, res, next) => {
 		});
 	});
 });
-
 
 
 module.exports = router;

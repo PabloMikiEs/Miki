@@ -37,6 +37,7 @@ angular.module('customerModule', ["ngRoute"])
     		$scope.customerPets = []
     	}
 
+    	
     	$scope.submit = function() {
     		console.log("Insert customer:", $scope.customer);
     		
@@ -72,46 +73,3 @@ angular.module('customerModule', ["ngRoute"])
   		
     });
 
-    
- 
-    	
-//    	// ESTO ES COMO SE INICIALIZA
-//    	const id = $routeParams.id;
-//    	
-//    	$http.get("/api/customers/" + id).then(function(response){
-//    		$scope.customer = response.data;
-//    	});
-//    	// traemos mascotas
-//    	$http.get("/api/pets").then(function(response) {
-//    		console.log("Aquí irían las mascotas");
-//    		$scope.customerPets = response.data;
-//    	});
-//    	
-//    	
-//    	// AHORA CARGAMOS FUNCIONES
-//    	$scope.submit = function(){
-//    		console.log("Guardando customer...");
-//    		console.log("IsNotNew?", $scope.customer._id == 'undefined');
-//    		// AQUI HACEMOS EL GUARDADO
-//    		$http.post("/api/customers/", $scope.customer).then(function(response) {
-//    			console.log("Customer guardado", response.data);
-//    			$scope.customer = response.data;
-//    		});
-// 	
-//    	}
-//    	
-//    	//AQUI UPDATE PUT
-//    	$scope.edit = function(){
-//    		console.log("Editar customer...");
-//    		console.log("IsNotNew?", $scope.customer._id == 'undefined');
-//    		// AQUI HACEMOS EL GUARDADO
-//    		$http.put("/api/customers/", $scope.customer._id).then(function(response) {
-//    			console.log("Customer editado", response.data);
-//    			$scope.customer = response.data;
-//    		});
-// 	
-//    	}
-//    	
-//    	
-//    	
-//    });
