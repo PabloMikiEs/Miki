@@ -14,7 +14,7 @@ $(document).ready(function(){
     if(window_width <= 991){
         lbd.initRightMenu();
     }
-    $('[rel="tooltip"]').tooltip();
+    //$('[rel="tooltip"]').tooltip();
    
     if($('.switch').length != 0){
         $('.switch')['bootstrapSwitch']();

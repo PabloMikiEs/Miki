@@ -15,8 +15,8 @@ angular.module('customerModule', ["ngRoute"])
     	
     	
     	if(isNaN(+$routeParams.id)) {
-    		$scope.customer = customersService.get({id: id});
-    		customersService.getPetsForCustomer(id).then(function(response) {
+    		$scope.customer = customersServices.get({id: id});
+    		customersServices.getPetsForCustomer(id).then(function(response) {
     			console.log("Response /api/customers/" + $routeParams.id, response);
     			$scope.customerPets = response.data;
     		});
